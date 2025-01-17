@@ -93,6 +93,8 @@ By the end of this module, you will be able to:
 
 ### Process and Thread Illustration
 
+![Process and Thread Illustration](../images/proccess_threads_illustration.png)
+
 ## Problems in Concurrent Programs
 
 ### Race Condition
