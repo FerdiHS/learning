@@ -1,7 +1,5 @@
 # Lecture 01: Mutual Exclusion (Mutex)
 
-# Mutual Exclusion Problem
-
 ## Context
 
 - Found in **shared memory system**, such as multi-processor computers or multi-threaded programs.
