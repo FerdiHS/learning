@@ -23,8 +23,8 @@ $p(x)=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\exp\!\big(-\tfrac12 (x-\mu)^\top\Sig
 - **Likelihood:** $p(\mathcal D\mid \theta)=\prod_{n=1}^N \mathcal N(x_n\mid \mu,\sigma^2)$ with $\theta = \{\mu, \sigma^2\}$
 - **Loss: $\mathcal{L}(\theta) = \frac{1}{2} \sum_{n=1}^{N}(t_n - \mu)^2$**
 - **MLE (Maximum Likelihood Estimation):**
-$\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
-\hat\sigma^2_{\text{ML}}=\frac1N \sum_{n=1}^N (x_n-\hat\mu_{\text{ML}})^2$.
+$\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
+\sigma^2_{\text{ML}}=\frac1N \sum_{n=1}^N (x_n-\hat\mu_{\text{ML}})^2$.
 - <details>
     <summary><b>Proof</b>:</summary>
     
@@ -52,7 +52,7 @@ $\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
     Hence,
     $\sum_{n=1}^N x_n - N\mu = 0
     \quad\Rightarrow\quad
-    \boxed{\ \hat\mu_{\text{ML}}=\frac{1}{N}\sum_{n=1}^N x_n\ }$ .
+    \boxed{\ \mu_{\text{ML}}=\frac{1}{N}\sum_{n=1}^N x_n\ }$ .
     
     Second derivative:
     $\displaystyle \frac{\partial^2 \mathcal{L}}{\partial \mu^2}=-N<0$,
@@ -70,7 +70,7 @@ $\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
     
     $-N\sigma^2 + S(\mu)=0
     \quad\Rightarrow\quad
-    \boxed{\ \hat\sigma^2_{\text{ML}}=\frac{1}{N}\,S(\hat\mu_{\text{ML}})
+    \boxed{\ \sigma^2_{\text{ML}}=\frac{1}{N}\,S(\hat\mu_{\text{ML}})
     =\frac{1}{N}\sum_{n=1}^N\big(x_n-\hat\mu_{\text{ML}}\big)^2\ }$
     
     (Second derivative at the solution is negative, confirming a maximum.)
@@ -111,17 +111,21 @@ $\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
     **1) MLE:**
     
     **Likelihood**
+
     $p(t\mid \Phi,w,\beta)
     = (2\pi)^{-N/2}\,\beta^{N/2}\,
     \exp\!\Big(-\tfrac{\beta}{2}\,\|\Phi w - t\|_2^2\Big)$
     
     **Negative log-likelihood (loss)**
+
     $\mathcal L_{\text{MLE}}(w)
     := -\frac{1}{\beta}\log p(t\mid \Phi,w,\beta)
     = \tfrac{1}{2}\|\Phi w - t\|_2^2 + \text{const}$.
+    
     (“Const” does not depend on $w$ and can be dropped for optimization.)
     
     **Solution (normal equations)**
+
     $\nabla_w \mathcal L_{\text{MLE}}(w)
     = \,\Phi^\top(\Phi w - t)=0
     \ \Longrightarrow\
@@ -134,21 +138,25 @@ $\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
     **2.) MAP**
     
     **Prior on parameters**
+    
     $p(w\mid \alpha)=\mathcal N(0,\alpha^{-1}I)
     \ \ \Longrightarrow\ \
     -\log p(w\mid\alpha)=\tfrac{\alpha}{2}\|w\|_2^2 + \text{const}$.
     
     **Posterior (up to proportionality)**
+    
     $p(w\mid \mathcal D,\alpha,\beta) \ \propto\
     p(t\mid \Phi,w,\beta)\,p(w\mid \alpha)$.
     
     **Negative log-posterior (MAP loss)**
+    
     $\mathcal L_{\text{MAP}}(w)
     := -\frac{1}{\beta}\log p(w\mid \mathcal D,\alpha,\beta)
     = \tfrac{1}{2}\|\Phi w - t\|_2^2 + \tfrac{\alpha}{2\beta}\|w\|_2^2 + \text{const}$.
     So the **regularizer** $\tfrac{\alpha}{2\beta}\|w\|^2$ comes directly from the Gaussian prior.
     
     **Solution**
+
     $\nabla_w \mathcal L_{\text{MAP}}(w)
     = \beta\,\Phi^\top(\Phi w - t) + \alpha\,w = 0$
     $\Longrightarrow\quad
@@ -173,12 +181,75 @@ $\hat\mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
 
 ---
 
-# Frequentist vs Bayesian (coin-flip mini-example)
+# Frequentist vs Bayesian (Coin Flip Example)
 
-- **Frequentist MLE:** pick $\theta$ (e.g., coin bias) that maximizes $p(\mathcal D\mid \theta)$.
-- **Bayesian:** start with **prior** $p(\theta)$, update via **Bayes’ rule** to get **posterior** $p(\theta\mid\mathcal D)$; predict by averaging over the posterior.
-- **MAP** is the “cheap” Bayesian: take the mode instead of integrating.
+## **Setup**
+
+We flip a special coin three times and observe $D = \text{HHH}$.
+
+The coin’s bias $\theta$ is restricted to the set $\{0, 0.2, 0.8, 1.0\}$.
+
+Prior: uniform over these four values.
 
 ---
+
+## **Frequentist (MLE)**
+
+We maximize the likelihood:
+$\theta_{\text{MLE}} = \arg\max_\theta p(D \mid \theta) = \arg\max_\theta \theta^3$.
+
+- For $\theta=0$: $p(D\mid\theta)=0$
+- For $\theta=0.2$: $0.2^3=0.008$
+- For $\theta=0.8$: $0.8^3=0.512$
+- For $\theta=1.0$: $1^3=1.0$
+
+So, $\theta_{\text{MLE}} = 1.0$.
+
+Prediction: $p(\text{H}\mid D) \approx 1.0$.
+
+---
+
+## **Bayesian (Posterior)**
+
+Posterior (unnormalized):
+$p(\theta \mid D) \propto p(D \mid \theta)\,p(\theta)$.
+Since the prior is uniform $p(\theta)=1/4$:
+
+| $\theta$ | $p(D\mid\theta)$ | Unnormalized Posterior |
+| --- | --- | --- |
+| 0.0 | 0.000 | 0.000 |
+| 0.2 | 0.008 | 0.002 |
+| 0.8 | 0.512 | 0.128 |
+| 1.0 | 1.000 | 0.250 |
+
+Normalize by dividing through the total evidence $Z=0.38$:
+
+$p(\theta=0.2\mid D)\approx 0.005,\quad
+p(\theta=0.8\mid D)\approx 0.337,\quad
+p(\theta=1.0\mid D)\approx 0.658.$
+
+---
+
+## **Bayesian Predictive**
+
+Instead of picking one $\theta$, average predictions:
+$p(\text{H}\mid D) = \sum_\theta \theta \, p(\theta\mid D)= 0.2(0.005) + 0.8(0.337) + 1.0(0.658) \approx 0.929.$.
+
+---
+
+## **MAP Estimate**
+
+$\theta_{\text{MAP}} = \arg\max_\theta p(\theta\mid D) = 1.0$,
+so $p(\text{H}\mid D) \approx 1.0$.
+
+This is like Bayesian but without averaging (just picks the most probable parameter).
+
+---
+
+**Key Insights.**
+
+- **MLE** ignores priors → extreme estimates when data is small.
+- **Bayesian Predictive** softens estimates by averaging over posterior.
+- **MAP** is a compromise: incorporates the prior but still picks one parameter.
 
 ---
