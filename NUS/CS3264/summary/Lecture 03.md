@@ -18,7 +18,7 @@ $p(\mathbf t\mid \boldsymbol\mu)=\prod_{n=1}^N \mu_n^{t_n}(1-\mu_n)^{1-t_n}$*.
 
 - **Data**: $D = \{(x_n, t_n)\}_{n=1}^{N}$
 - **Targets**: $t_n \in \{-1, +1\}$
-- **Model**: ($y(x)=\operatorname{sign}(w^\top x)$.
+- **Model**: $y(x)=\operatorname{sign}(w^\top x)$.
 
 ---
 
@@ -34,14 +34,12 @@ $p(\mathbf t\mid \boldsymbol\mu)=\prod_{n=1}^N \mu_n^{t_n}(1-\mu_n)^{1-t_n}$*.
     - **Prior**: $p(w) = N(\mid 0, \alpha^{-1}I)$
 - **Loss**:
     - **MLE**:
-        
         $\mathcal{L}_{\text{MLE}}(w) = -\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)$
         
     - **MAP**:
-        
         $\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} ||w||_2^2$
         
-    <details>
+- <details>
     <summary><b>Proof</b>:</summary>
     
     **MLE**:
