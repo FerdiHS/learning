@@ -33,8 +33,9 @@ $\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top x_n - t_n)^2$
 $w_{\text{ML}} = (X^\top X)^{-1}X^\top t$
 - <details>
     <summary>Proof:</summary>
-    $\nabla_w \mathcal{L}(w)=X^\top(Xw - t)$
     
+    $\nabla_w \mathcal{L}(w)=X^\top(Xw - t)$
+
     At the optimum, set gradient to zero:
     $X^\top X\,w=X^\top t \quad\Rightarrow\quad w=(X^\top X)^{-1}X^\top t$
     </details>
