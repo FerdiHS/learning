@@ -65,9 +65,10 @@ Renewal happens before lease expiry; NAK/DECLINE/RELEASE handle conflict/error p
 - **Request:** broadcast “Who has 192.168.1.1? Tell 192.168.1.10.”
 - **Reply:** unicast “192.168.1.1 is at 00:11:22:33:44:55.”
 - Entries are cached; time out; gratuitous ARP can announce/refresh.
-- How Ethernet knows it’s IP?
-    
+<details>
+    <summary>How Ethernet knows it’s IP?</summary>
     via the **EtherType** field in the Ethernet frame. `0x0800` = IPv4, `0x86DD` = IPv6, `0x0806` = ARP.
+</details>
     
 
 ---
