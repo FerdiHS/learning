@@ -80,6 +80,8 @@ $$
 \max_x f(x) \\ \text{subject to} \\ g(x) \ge 0
 $$
 
+$L(x) = f(x) + \lambda g(x)$ where $\lambda \ge 0$ is the Lagrange multiplier.
+
 ### Karush-Kuhn-Tucker (KKT)
 
 $$
