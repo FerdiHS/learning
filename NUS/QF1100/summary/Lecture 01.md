@@ -598,7 +598,7 @@ interval can be split into consecutive shorter intervals.
 
 </details>
 
-## Must Remember
+## Key Takeaways
 
 - Simple interest grows linearly: $a(t) = 1 + rt$.
 - Compound interest grows exponentially: $a(t) = (1+r)^t$.
