@@ -33,30 +33,53 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
     - **Likelihood**: $p(\mathbf{t} \mid X, w) = \prod_{n=1}^{N} \mathrm{Bern}(t_n \mid y(x_n))$
     - **Prior**: $p(w)=\mathcal{N}(w\mid0,\alpha^{-1}I)$
 - **Loss**:
-    - **MLE**:
-        $\mathcal{L}_{\text{MLE}}(w) = -\left(\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)\right)$
-        
-    - **MAP**:
-        $\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2$
-        
+    - **MLE loss**
+
+        ```math
+        \mathcal{L}_{\text{MLE}}(w) = -\left(\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)\right)
+        ```
+
+    - **MAP loss**
+
+        ```math
+        \mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2}\|w\|_2^2
+        ```
+
 <details>
 <summary><strong>Proof</strong></summary>
 
 **MLE:** maximizing $p(\mathbf{t} \mid X, w)$ is equivalent to maximizing
-$\prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}$, so
 
-$\log p(\mathbf{t} \mid X, w) = \sum_{n=1}^{N} \left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)$.
+```math
+\prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}
+```
 
-Therefore,
-$\mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)$.
+Taking logs gives
+
+```math
+\log p(\mathbf{t} \mid X, w) = \sum_{n=1}^{N} \left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)
+```
+
+Therefore
+
+```math
+\mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)
+```
 
 **MAP:** maximizing $p(w \mid X, \mathbf{t})$ is proportional to maximizing
-$p(\mathbf{t} \mid X, w) p(w)$, which gives
+$p(\mathbf{t} \mid X, w) p(w)$.
 
-$\log p(w \mid X, \mathbf{t}) \propto - \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}$.
+This gives
 
-Therefore,
-$\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2$.
+```math
+\log p(w \mid X, \mathbf{t}) \propto - \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}
+```
+
+Therefore
+
+```math
+\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2
+```
 
 </details>
 

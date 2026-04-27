@@ -43,6 +43,7 @@ Therefore:
 $w=(X^\top X)^{-1}X^\top t$.
 
 </details>
+
 ---
 
 # Nonlinear Regression

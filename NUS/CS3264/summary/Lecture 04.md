@@ -15,7 +15,9 @@
 
 # Gradient Descent
 
-$w_{k+1} = w_k - \eta (\sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w)$
+```math
+w_{k+1} = w_k - \eta \left(\sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w\right)
+```
 
 Where $\eta$: Learning Rate
 
@@ -23,13 +25,22 @@ Where $\eta$: Learning Rate
 <summary><strong>Proof</strong></summary>
 
 We know
-$\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$.
+
+```math
+\mathcal{L}_{\text{MAP}}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w
+```
 
 Therefore,
-$\nabla_w \mathcal{L}_{MAP}(w) = \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w)$.
+
+```math
+\nabla_w \mathcal{L}_{\text{MAP}}(w) = \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w \left(\frac{\alpha}{2} w^\top w\right)
+```
 
 This simplifies to
-$\sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w = \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w$.
+
+```math
+\sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w = \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w
+```
 
 </details>
 
@@ -44,22 +55,40 @@ $\sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha
     - **Class Conditional Distribution**: $p(x \mid t, \theta) = \prod_{m=1}^{M} \mathcal{N}(x^m \mid \mu_t^m, v_t^m)$
     - **Class Prior**: $p(t\mid \theta) = \mathrm{Bern}(t \mid \pi)$
 - **Loss**:
-    - **MLE**:
-    $\mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left(t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right)$
-    - **MAP**:
-    $\mathcal{L}_{\text{MAP}}(\pi, \theta) = \mathcal{L}_{\text{NB}}(\pi, \theta) - \log p(\pi) - \sum_{t, m} \log p(\mu_t^m, v_t^m)$
+    - **MLE loss**:
+
+        ```math
+        \mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left(t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right)
+        ```
+
+    - **MAP loss**:
+
+        ```math
+        \mathcal{L}_{\text{MAP}}(\pi, \theta) = \mathcal{L}_{\text{NB}}(\pi, \theta) - \log p(\pi) - \sum_{t, m} \log p(\mu_t^m, v_t^m)
+        ```
+
 - **Solution**:
-    - **MLE**:
-        
-        $\pi_{\text{MLE}} = \frac{N_1}{N}$
-        
-        $\mu_{t, \text{MLE}}^m = \bar{x}_t^m$
-        
-        $v_{t, \text{MLE}}^m = \frac{1}{N_t}\sum_{n\in I_t}\big(x_n^m - \bar{x}_t^m\big)^2$
-        
-    - **MAP**:
-        
-        $\pi_{\text{MAP}}=\frac{N_1+a-1}{N+a+b-2}$ assuming $\pi \sim \text{Beta}(a, b)$
+    - **MLE solution**:
+
+        ```math
+        \pi_{\text{MLE}} = \frac{N_1}{N}
+        ```
+
+        ```math
+        \mu_{t, \text{MLE}}^m = \bar{x}_t^m
+        ```
+
+        ```math
+        v_{t, \text{MLE}}^m = \frac{1}{N_t}\sum_{n\in I_t}\big(x_n^m - \bar{x}_t^m\big)^2
+        ```
+
+    - **MAP solution**:
+
+        ```math
+        \pi_{\text{MAP}}=\frac{N_1+a-1}{N+a+b-2}
+        ```
+
+        assuming $\pi \sim \text{Beta}(a, b)$.
         
 
 ---
