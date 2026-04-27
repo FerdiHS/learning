@@ -3,7 +3,7 @@
 ## Basic Notions
 
 - **Hypothesis space**: $\mathcal{H}$
-- **Classifier**: $y(x) \in \mathcal{H}$
+- **Classifier / hypothesis**: $y \in \mathcal{H}$
 - Dataset: $\mathcal{D}$
 
 ---
@@ -52,7 +52,7 @@ $$
     
 - Model:
     
-    $y(x) \in \mathcal{H}$ assuming $\mathcal{H}$ is **finite** with size $M_\mathcal{H}$
+    $y \in \mathcal{H}$ assuming $\mathcal{H}$ is **finite** with size $M_\mathcal{H}$
     
 - Loss:
     
@@ -69,7 +69,7 @@ $$
 
 ### PAC-Bound
 
-If learning algorithm selects $\hat{y}(x) \in \mathcal{H}$ that minimizes $\mathcal{L}_\mathcal{D}(y)$
+If the learning algorithm selects $\hat{y} \in \mathcal{H}$ that minimizes $\mathcal{L}_\mathcal{D}(y)$
 
 and we choose $N \ge \frac{1}{2\epsilon^2} \log \big(\frac{2 M_\mathcal{H}}{\delta} \big)$. Then,
 

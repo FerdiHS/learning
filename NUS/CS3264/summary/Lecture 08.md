@@ -48,8 +48,10 @@
 3. Compute Attention Weights
     
     $$
-    S = \text{softmax} \big(\frac{QK^\top}{d_S}\big)
+    S = \text{softmax} \big(\frac{QK^\top}{\sqrt{d_k}}\big)
     $$
+
+    where $d_k$ is the dimensionality of the key/query vectors.
     
 4. Extract Features based on Attention
     
