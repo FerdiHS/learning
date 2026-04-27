@@ -35,51 +35,51 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
 - **Loss**:
     - **MLE loss**
 
-        ```math
+        $$
         \mathcal{L}_{\text{MLE}}(w) = -\left(\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)\right)
-        ```
+        $$
 
     - **MAP loss**
 
-        ```math
+        $$
         \mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2}\|w\|_2^2
-        ```
+        $$
 
 <details>
 <summary><strong>Proof</strong></summary>
 
 **MLE:** maximizing $p(\mathbf{t} \mid X, w)$ is equivalent to maximizing
 
-```math
+$$
 \prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}
-```
+$$
 
 Taking logs gives
 
-```math
+$$
 \log p(\mathbf{t} \mid X, w) = \sum_{n=1}^{N} \left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)
-```
+$$
 
 Therefore
 
-```math
+$$
 \mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)
-```
+$$
 
 **MAP:** maximizing $p(w \mid X, \mathbf{t})$ is proportional to maximizing
 $p(\mathbf{t} \mid X, w) p(w)$.
 
 This gives
 
-```math
+$$
 \log p(w \mid X, \mathbf{t}) \propto - \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}
-```
+$$
 
 Therefore
 
-```math
+$$
 \mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2
-```
+$$
 
 </details>
 
