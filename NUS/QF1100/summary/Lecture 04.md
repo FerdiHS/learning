@@ -255,7 +255,7 @@ $$
 Solving for the forward rate:
 
 $$
-f_{j,k} = \left[ \frac{(1+s_k)^k}{(1+s_j)^j} \right]^{1/(k-j)} - 1
+f_{j,k} = \left( \frac{(1+s_k)^k}{(1+s_j)^j} \right)^{1/(k-j)} - 1
 $$
 
 For the one-period forward rate from year $1$ to year $2$:

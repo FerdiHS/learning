@@ -203,13 +203,13 @@ $$
 Using the ordinary annuity formula:
 
 $$
-P = F\left[ \frac{1}{(1+\lambda/m)^n} + \frac{c}{\lambda} \left(1-\frac{1}{(1+\lambda/m)^n}\right) \right]
+P = F\left( \frac{1}{(1+\lambda/m)^n} + \frac{c}{\lambda} \left(1-\frac{1}{(1+\lambda/m)^n}\right) \right)
 $$
 
 Equivalently:
 
 $$
-P = F + F\left(\frac{c-\lambda}{\lambda}\right) \left[ 1-\frac{1}{(1+\lambda/m)^n} \right]
+P = F + F\left(\frac{c-\lambda}{\lambda}\right) \left(1-\frac{1}{(1+\lambda/m)^n}\right)
 $$
 
 <details>
@@ -559,7 +559,7 @@ $$
 The bond duration is:
 
 $$
-D = \frac{1}{P} \left[ \sum_{i=1}^{n} \frac{(i/m)(cF/m)}{(1+\lambda/m)^i} + \frac{(n/m)R}{(1+\lambda/m)^n} \right]
+D = \frac{1}{P} \left( \sum_{i=1}^{n} \frac{(i/m)(cF/m)}{(1+\lambda/m)^i} + \frac{(n/m)R}{(1+\lambda/m)^n} \right)
 $$
 
 If $R = F$, then the face value cancels out:
@@ -583,7 +583,7 @@ $$
 After simplification:
 
 $$
-D = \frac{1+\mu}{m\mu} - \frac{1+\mu+n(\gamma-\mu)} {m\gamma\left[(1+\mu)^n-1\right]+m\mu}
+D = \frac{1+\mu}{m\mu} - \frac{1+\mu+n(\gamma-\mu)} {m\gamma\left((1+\mu)^n-1\right)+m\mu}
 $$
 
 If the bond is priced at par, then $P = F$ and $\mu = \gamma$. In this

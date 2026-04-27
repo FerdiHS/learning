@@ -362,7 +362,7 @@ positive, so the weighted average itself must be positive.
 If $X$ has mean $E(X)$, then the variance of $X$ is:
 
 $$
-\mathrm{Var}(X) = E\left[(X-E(X))^2\right]
+\mathrm{Var}(X) = E\left((X-E(X))^2\right)
 $$
 
 Variance is the expected squared deviation from the mean.
@@ -426,7 +426,7 @@ and $Y$.
 It is defined by:
 
 $$
-\mathrm{Cov}(X,Y) = E\left[(X-E(X))(Y-E(Y))\right]
+\mathrm{Cov}(X,Y) = E\left((X-E(X))(Y-E(Y))\right)
 $$
 
 It can also be written as:

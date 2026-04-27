@@ -362,7 +362,7 @@ the same exponential form.
 The force of interest is the instantaneous relative growth rate.
 
 $$
-\delta(t) = \frac{a'(t)}{a(t)} = \frac{d}{dt}\left[\ln a(t)\right]
+\delta(t) = \frac{a'(t)}{a(t)} = \frac{d}{dt}\ln a(t)
 $$
 
 If $\delta(t) = \delta$ is constant, then:

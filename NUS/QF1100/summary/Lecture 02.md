@@ -544,7 +544,7 @@ $$
 Its present value at $t = 0$ is:
 
 $$
-\mathrm{PV} = \sum_{j=1}^n \frac{A}{(1+r)^j} = \frac{A}{r}\left[1-\frac{1}{(1+r)^n}\right]
+\mathrm{PV} = \sum_{j=1}^n \frac{A}{(1+r)^j} = \frac{A}{r}\left(1-\frac{1}{(1+r)^n}\right)
 $$
 
 An annuity due has payments at the beginning of each period:
@@ -556,7 +556,7 @@ $$
 Its present value at $t = 0$ is:
 
 $$
-\mathrm{PV} = \sum_{j=0}^{n-1} \frac{A}{(1+r)^j} = \frac{A(1+r)}{r}\left[1-\frac{1}{(1+r)^n}\right]
+\mathrm{PV} = \sum_{j=0}^{n-1} \frac{A}{(1+r)^j} = \frac{A(1+r)}{r}\left(1-\frac{1}{(1+r)^n}\right)
 $$
 
 Relationship:
@@ -645,7 +645,7 @@ $$
 For equal end-of-period payments $A$ over $n$ periods:
 
 $$
-L = \frac{A}{r}\left[1-\frac{1}{(1+r)^n}\right]
+L = \frac{A}{r}\left(1-\frac{1}{(1+r)^n}\right)
 $$
 
 So:
@@ -693,7 +693,7 @@ $$
 Using the annuity formula:
 
 $$
-L_m^{\text{Bal}} = \frac{A}{r}\left[1-\frac{1}{(1+r)^{n-m}}\right]
+L_m^{\text{Bal}} = \frac{A}{r}\left(1-\frac{1}{(1+r)^{n-m}}\right)
 $$
 
 This method does not require the original loan amount $L$.
@@ -704,14 +704,14 @@ This looks backward. Accumulate the original loan to time $m$, then
 subtract the accumulated value of the payments already made.
 
 $$
-L_m^{\text{Bal}} = L(1+r)^m - \frac{A}{r}\left[(1+r)^m - 1\right]
+L_m^{\text{Bal}} = L(1+r)^m - \frac{A}{r}\left((1+r)^m - 1\right)
 $$
 
 Equivalently, as written using the ordinary annuity PV factor accumulated
 to time $m$:
 
 $$
-L_m^{\text{Bal}} = L(1+r)^m - \frac{A}{r}\left[1-\frac{1}{(1+r)^m}\right](1+r)^m
+L_m^{\text{Bal}} = L(1+r)^m - \frac{A}{r}\left(1-\frac{1}{(1+r)^m}\right)(1+r)^m
 $$
 
 This method requires the original loan amount $L$.
