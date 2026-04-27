@@ -77,10 +77,13 @@
 ### Original
 
 $$
-\max_x f(x) \\ \text{subject to} \\ g(x) \ge 0
+\begin{aligned}
+\max_x\; &f(x) \\
+\text{subject to}\; &g(x) \ge 0
+\end{aligned}
 $$
 
-$L(x) = f(x) + \lambda g(x)$ where $\lambda \ge 0$ is the Lagrange multiplier.
+$L(x, \lambda) = f(x) + \lambda g(x)$ where $\lambda \ge 0$ is the Lagrange multiplier.
 
 ### Karush-Kuhn-Tucker (KKT)
 
@@ -88,7 +91,7 @@ $$
 \begin{aligned}
 \max_x\min_{\lambda \ge 0}\; &L(x, \lambda) \\
 L(x, \lambda) &= f(x) + \lambda g(x) \\
-\nabla f(x_A) + \lambda \nabla g(x_A) &= 0 \\
+\nabla f(x) + \lambda \nabla g(x) &= 0 \\
 g(x) &\ge 0 \\
 \lambda &\ge 0 \\
 \lambda g(x) &= 0

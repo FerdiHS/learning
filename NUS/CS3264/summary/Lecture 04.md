@@ -45,7 +45,7 @@ $$
 
 - **Data**: $\mathcal D=\{(x_n,t_n)\}_{n=1}^N$, with $t_n\in\{0,1\}$, $x_n=(x_{n}^{1},\dots,x_{n}^{M})$.
 - **Model**:
-    - **Likelihood**: $p(t, X \mid \theta) = p(X \mid t, \theta) p(t \mid \theta)$
+    - **Joint distribution**: $p(t, x \mid \theta) = p(x \mid t, \theta) p(t \mid \theta)$
     - **Class Conditional Distribution**: $p(x \mid t, \theta) = \prod_{m=1}^{M} \mathcal{N}(x^m \mid \mu_t^m, v_t^m)$
     - **Class Prior**: $p(t\mid \theta) = \operatorname{Bern}(t \mid \pi)$
 - **Loss**:

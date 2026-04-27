@@ -2,8 +2,6 @@
 
 ---
 
----
-
 ## Setup & Notation
 
 - **Data**: $\mathcal D=\{(x_n,t_n)\}_{n=1}^N$, with $(x,t)\sim p(x,t)$.

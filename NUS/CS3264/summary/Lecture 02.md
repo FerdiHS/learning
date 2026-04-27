@@ -21,7 +21,7 @@ $p(x)=\dfrac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\exp\!\big(-\tfrac12 (x-\mu)^\top\Sig
 
 - **Data:** $\mathcal D=\{x_n\}_{n=1}^N$, assume i.i.d. $x_n\sim \mathcal{N}(\mu,\sigma^2)$.
 - **Likelihood:** $p(\mathcal D\mid \theta)=\prod_{n=1}^N \mathcal{N}(x_n\mid \mu,\sigma^2)$ with $\theta = \{\mu, \sigma^2\}$
-- **Loss: $\mathcal{L}(\theta) = \frac{1}{2} \sum_{n=1}^{N}(x_n - \mu)^2$**
+- **Loss for optimizing $\mu$ (with fixed $\sigma^2$): $\mathcal{L}(\mu) = \frac{1}{2} \sum_{n=1}^{N}(x_n - \mu)^2$**
 - **MLE (Maximum Likelihood Estimation):**
 $$
 \mu_{\text{ML}}=\frac1N\sum_{n=1}^N x_n,\qquad
@@ -42,7 +42,10 @@ $$
     \end{align*}
     $$
     
-    Therefore, $\mathcal{L}(\theta):=\frac{1}{2}\sum_{n=1}^{N}(x_n-\mu)^2$
+    Therefore, for fixed $\sigma^2$, maximizing the log-likelihood in $\mu$ is equivalent to minimizing
+    $$
+    \mathcal{L}(\mu):=\frac{1}{2}\sum_{n=1}^{N}(x_n-\mu)^2
+    $$
     
     **2) MLE for the mean $\mu$**
     

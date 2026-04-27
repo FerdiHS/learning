@@ -34,8 +34,6 @@ $$
 
 ---
 
----
-
 ## Union Bound (Boole’s Inequality)
 
 Given events $E_1, E_2, \dots, E_N$
