@@ -55,8 +55,7 @@ $$
 $$
 
 $$
-TV_T(C),\ TV_T(P)
-= \text{time-}T \text{ values of the call and put premiums}
+TV_T(C),\ TV_T(P) = \text{time-}T \text{ values of the call and put premiums}
 $$
 
 $$
@@ -100,13 +99,11 @@ C_{\text{node}} = \text{option value at a generic binomial node}
 $$
 
 $$
-C_{\text{up}},\ C_{\text{down}}
-= \text{option values at the two child nodes of a given node}
+C_{\text{up}},\ C_{\text{down}} = \text{option values at the two child nodes of a given node}
 $$
 
 $$
-C_{uu}, C_{ud}, C_{dd}
-= \text{option values at later binomial nodes}
+C_{uu}, C_{ud}, C_{dd} = \text{option values at later binomial nodes}
 $$
 
 $$
@@ -419,11 +416,7 @@ Using calls, it is formed by:
 Ignoring premiums, the payoff is:
 
 $$
-\begin{cases}
-0, & S_T \le K_1, \\
-S_T-K_1, & K_1 < S_T < K_2, \\
-K_2-K_1, & S_T \ge K_2.
-\end{cases}
+\begin{cases} 0, & S_T \le K_1, \\ S_T-K_1, & K_1 < S_T < K_2, \\ K_2-K_1, & S_T \ge K_2. \end{cases}
 $$
 
 <details>
@@ -489,12 +482,7 @@ The strategy is:
 Ignoring premiums, the payoff is:
 
 $$
-\begin{cases}
-0, & S_T \le K_1, \\
-S_T-K_1, & K_1 < S_T \le K_2, \\
-K_3-S_T, & K_2 < S_T < K_3, \\
-0, & S_T \ge K_3.
-\end{cases}
+\begin{cases} 0, & S_T \le K_1, \\ S_T-K_1, & K_1 < S_T \le K_2, \\ K_3-S_T, & K_2 < S_T < K_3, \\ 0, & S_T \ge K_3. \end{cases}
 $$
 
 <details>
@@ -777,8 +765,7 @@ backward one node at a time.
 At each node:
 
 $$
-C_{\text{node}}
-= \frac{1}{R}\left(qC_{\text{up}}+(1-q)C_{\text{down}}\right)
+C_{\text{node}} = \frac{1}{R}\left(qC_{\text{up}}+(1-q)C_{\text{down}}\right)
 $$
 
 For two periods:

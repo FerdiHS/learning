@@ -45,7 +45,7 @@ C_1,C_2,\ldots,C_n = \text{cash flows paid at times } 1,2,\ldots,n
 $$
 
 $$
-\operatorname{PV} = \text{present value}
+\mathrm{PV} = \text{present value}
 $$
 
 $$
@@ -122,8 +122,7 @@ is the accumulation factor for holding money from time $0$ to time $t$.
 Equivalently, if a cash flow $C_t$ is paid at time $t$, its present value is:
 
 $$
-\operatorname{PV}
-= \frac{C_t}{(1+s_t)^t}
+\mathrm{PV} = \frac{C_t}{(1+s_t)^t}
 $$
 
 The collection of spot rates defines the term structure of interest rates.
@@ -167,8 +166,7 @@ $$
 Solving for $s_n$:
 
 $$
-s_n
-= \left(\frac{R}{P}\right)^{1/n} - 1
+s_n = \left(\frac{R}{P}\right)^{1/n} - 1
 $$
 
 <details>
@@ -245,8 +243,7 @@ spot rates cover the whole period from now to a future date.
 The key no-arbitrage relationship is:
 
 $$
-(1+s_k)^k
-= (1+s_j)^j(1+f_{j,k})^{k-j}
+(1+s_k)^k = (1+s_j)^j(1+f_{j,k})^{k-j}
 $$
 
 for:
@@ -258,12 +255,7 @@ $$
 Solving for the forward rate:
 
 $$
-f_{j,k}
-=
-\left[
-\frac{(1+s_k)^k}{(1+s_j)^j}
-\right]^{1/(k-j)}
-- 1
+f_{j,k} = \left[ \frac{(1+s_k)^k}{(1+s_j)^j} \right]^{1/(k-j)} - 1
 $$
 
 For the one-period forward rate from year $1$ to year $2$:
@@ -275,8 +267,7 @@ $$
 Thus:
 
 $$
-f_{1,2}
-= \frac{(1+s_2)^2}{1+s_1} - 1
+f_{1,2} = \frac{(1+s_2)^2}{1+s_1} - 1
 $$
 
 <details>
@@ -322,11 +313,7 @@ rate matching its payment time.
 For cash flows $C_1,C_2,\ldots,C_n$:
 
 $$
-P
-= \frac{C_1}{1+s_1}
-+ \frac{C_2}{(1+s_2)^2}
-+ \cdots
-+ \frac{C_n}{(1+s_n)^n}
+P = \frac{C_1}{1+s_1} + \frac{C_2}{(1+s_2)^2} + \cdots + \frac{C_n}{(1+s_n)^n}
 $$
 
 This is different from using one constant yield for every cash flow.
@@ -376,12 +363,7 @@ $$
 When coupons are annual, we have $m=1$, so the pricing equation is:
 
 $$
-P_n
-= \frac{cF/m}{1+s_1}
-+ \frac{cF/m}{(1+s_2)^2}
-+ \cdots
-+ \frac{cF/m}{(1+s_{n-1})^{n-1}}
-+ \frac{cF/m+R}{(1+s_n)^n}
+P_n = \frac{cF/m}{1+s_1} + \frac{cF/m}{(1+s_2)^2} + \cdots + \frac{cF/m}{(1+s_{n-1})^{n-1}} + \frac{cF/m+R}{(1+s_n)^n}
 $$
 
 Since $s_1,\ldots,s_{n-1}$ are already known, the only unknown is $s_n$.

@@ -188,11 +188,7 @@ $$
 The accumulation formulas are:
 
 $$
-\begin{aligned}
-a\left(\frac{1}{p}\right) &= 1 + \frac{r^{(p)}}{p}, \\
-a(1) &= \left(1 + \frac{r^{(p)}}{p}\right)^p, \\
-a(t) &= \left(1 + \frac{r^{(p)}}{p}\right)^{pt}.
-\end{aligned}
+\begin{aligned} a\left(\frac{1}{p}\right) &= 1 + \frac{r^{(p)}}{p}, \\ a(1) &= \left(1 + \frac{r^{(p)}}{p}\right)^p, \\ a(t) &= \left(1 + \frac{r^{(p)}}{p}\right)^{pt}. \end{aligned}
 $$
 
 Common values:
@@ -292,9 +288,7 @@ Two nominal rates are equivalent if they produce the same one-year
 accumulation.
 
 $$
-\left(1 + \frac{r^{(p)}}{p}\right)^p
-=
-\left(1 + \frac{R^{(q)}}{q}\right)^q
+\left(1 + \frac{r^{(p)}}{p}\right)^p = \left(1 + \frac{R^{(q)}}{q}\right)^q
 $$
 
 Use this when converting between compounding frequencies.
@@ -368,8 +362,7 @@ the same exponential form.
 The force of interest is the instantaneous relative growth rate.
 
 $$
-\delta(t) = \frac{a'(t)}{a(t)}
-= \frac{d}{dt}\left[\ln a(t)\right]
+\delta(t) = \frac{a'(t)}{a(t)} = \frac{d}{dt}\left[\ln a(t)\right]
 $$
 
 If $\delta(t) = \delta$ is constant, then:
@@ -428,8 +421,7 @@ $$
 For accumulation from time $s$ to time $t$:
 
 $$
-a(s,t) = \frac{a(t)}{a(s)}
-= \exp\left(\int_s^t \delta(u)\,du\right)
+a(s,t) = \frac{a(t)}{a(s)} = \exp\left(\int_s^t \delta(u)\,du\right)
 $$
 
 <details>
@@ -467,8 +459,7 @@ $\frac{a(t)}{a(s)} = \frac{ \exp(\int_0^t \delta(u)\,du) }{ \exp(\int_0^s \delta
 For $t_0 < t_1 < t_2 < \cdots < t_n$:
 
 $$
-a(t_0,t_n)
-= a(t_0,t_1)a(t_1,t_2)\cdots a(t_{n-1},t_n)
+a(t_0,t_n) = a(t_0,t_1)a(t_1,t_2)\cdots a(t_{n-1},t_n)
 $$
 
 <details>

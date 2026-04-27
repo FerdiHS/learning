@@ -89,8 +89,7 @@ IM,MM = \text{initial margin requirement and maintenance margin requirement}
 $$
 
 $$
-A_T^{\text{long}},A_T^{\text{short}}
-= \text{accrued profit at maturity for long and short futures positions}
+A_T^{\text{long}},A_T^{\text{short}} = \text{accrued profit at maturity for long and short futures positions}
 $$
 
 $$
@@ -470,35 +469,26 @@ For a long futures position held from time $0$ to maturity $T$, the accrued
 profit at time $T$ is:
 
 $$
-A_T^{\text{long}}
-= \sum_{i=1}^{N}
-\left[F(i)-F(i-1)\right]R^{N-i}
+A_T^{\text{long}} = \sum_{i=1}^{N} \left[F(i)-F(i-1)\right]R^{N-i}
 $$
 
 For a position with contract size $Q$, multiply by $Q$:
 
 $$
-QA_T^{\text{long}}
-= Q\sum_{i=1}^{N}
-\left[F(i)-F(i-1)\right]R^{N-i}
+QA_T^{\text{long}} = Q\sum_{i=1}^{N} \left[F(i)-F(i-1)\right]R^{N-i}
 $$
 
 For a short futures position, the accrued profit is:
 
 $$
-A_T^{\text{short}}
-= -\sum_{i=1}^{N}
-\left[F(i)-F(i-1)\right]R^{N-i}
+A_T^{\text{short}} = -\sum_{i=1}^{N} \left[F(i)-F(i-1)\right]R^{N-i}
 $$
 
 If the interest rate is zero, then $R=1$ and the long futures profit
 telescopes:
 
 $$
-A_T^{\text{long}}
-= \sum_{i=1}^{N}
-\left[F(i)-F(i-1)\right]
-= F(N)-F(0)
+A_T^{\text{long}} = \sum_{i=1}^{N} \left[F(i)-F(i-1)\right] = F(N)-F(0)
 $$
 
 Since $F(N)=S(T)$ at maturity:
@@ -558,10 +548,7 @@ with the same maturity should have the same delivery price if:
 For this course, the simplifying assumption is:
 
 $$
-F_{\text{forward}}(t,T)
-= F_{\text{future}}(t,T)
-= F(t,T)
-= S_t e^{r(T-t)}
+F_{\text{forward}}(t,T) = F_{\text{future}}(t,T) = F(t,T) = S_t e^{r(T-t)}
 $$
 
 <details>

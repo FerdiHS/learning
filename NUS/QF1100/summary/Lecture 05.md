@@ -64,27 +64,27 @@ $$
 $$
 
 $$
-\operatorname{Var}(X) = \text{variance of } X
+\mathrm{Var}(X) = \text{variance of } X
 $$
 
 $$
-\operatorname{SD}(X) = \text{standard deviation of } X
+\mathrm{SD}(X) = \text{standard deviation of } X
 $$
 
 $$
-\sigma^2,\sigma_X^2 = \text{common notation for } \operatorname{Var}(X)
+\sigma^2,\sigma_X^2 = \text{common notation for } \mathrm{Var}(X)
 $$
 
 $$
-\sigma,\sigma_X = \text{common notation for } \operatorname{SD}(X)
+\sigma,\sigma_X = \text{common notation for } \mathrm{SD}(X)
 $$
 
 $$
-\operatorname{Cov}(X,Y) = \text{covariance of } X \text{ and } Y
+\mathrm{Cov}(X,Y) = \text{covariance of } X \text{ and } Y
 $$
 
 $$
-\rho_{X,Y} = \operatorname{Corr}(X,Y) = \text{correlation coefficient of } X \text{ and } Y
+\rho_{X,Y} = \mathrm{Corr}(X,Y) = \text{correlation coefficient of } X \text{ and } Y
 $$
 
 $$
@@ -115,17 +115,13 @@ same idea period by period.
 The total return is defined as:
 
 $$
-R = \frac{\text{amount received}}{\text{amount invested}}
-= \frac{P_1}{P_0}
+R = \frac{\text{amount received}}{\text{amount invested}} = \frac{P_1}{P_0}
 $$
 
 The rate of return is defined as:
 
 $$
-r
-= \frac{\text{amount received} - \text{amount invested}}
-{\text{amount invested}}
-= \frac{P_1 - P_0}{P_0}
+r = \frac{\text{amount received} - \text{amount invested}} {\text{amount invested}} = \frac{P_1 - P_0}{P_0}
 $$
 
 The two are related by:
@@ -366,8 +362,7 @@ positive, so the weighted average itself must be positive.
 If $X$ has mean $E(X)$, then the variance of $X$ is:
 
 $$
-\operatorname{Var}(X)
-= E\left[(X-E(X))^2\right]
+\mathrm{Var}(X) = E\left[(X-E(X))^2\right]
 $$
 
 Variance is the expected squared deviation from the mean.
@@ -401,7 +396,7 @@ $\mathrm{Var}(X)=E[(X-E(X))^2]$
 The standard deviation of $X$ is the square root of its variance:
 
 $$
-\operatorname{SD}(X) = \sqrt{\operatorname{Var}(X)}
+\mathrm{SD}(X) = \sqrt{\mathrm{Var}(X)}
 $$
 
 Common notation:
@@ -431,15 +426,13 @@ and $Y$.
 It is defined by:
 
 $$
-\operatorname{Cov}(X,Y)
-= E\left[(X-E(X))(Y-E(Y))\right]
+\mathrm{Cov}(X,Y) = E\left[(X-E(X))(Y-E(Y))\right]
 $$
 
 It can also be written as:
 
 $$
-\operatorname{Cov}(X,Y)
-= E(XY) - E(X)E(Y)
+\mathrm{Cov}(X,Y) = E(XY) - E(X)E(Y)
 $$
 
 In general:
@@ -476,15 +469,12 @@ $\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)$
 The correlation coefficient of $X$ and $Y$ is:
 
 $$
-\rho_{X,Y}
-= \operatorname{Corr}(X,Y)
-= \frac{\operatorname{Cov}(X,Y)}
-{\operatorname{SD}(X)\operatorname{SD}(Y)}
+\rho_{X,Y} = \mathrm{Corr}(X,Y) = \frac{\mathrm{Cov}(X,Y)} {\mathrm{SD}(X)\mathrm{SD}(Y)}
 $$
 
 It rescales covariance to remove the units of $X$ and $Y$.
 
-When $\operatorname{SD}(X)$ and $\operatorname{SD}(Y)$ are both nonzero,
+When $\mathrm{SD}(X)$ and $\mathrm{SD}(Y)$ are both nonzero,
 its range is:
 
 $$
@@ -529,7 +519,7 @@ for all $x$ and $y$.
 
 Important relationship:
 
-- If $X$ and $Y$ are independent, then $\operatorname{Cov}(X,Y)=0$. If $\operatorname{SD}(X)$ and $\operatorname{SD}(Y)$ are both nonzero, then $\rho_{X,Y}=0$.
+- If $X$ and $Y$ are independent, then $\mathrm{Cov}(X,Y)=0$. If $\mathrm{SD}(X)$ and $\mathrm{SD}(Y)$ are both nonzero, then $\rho_{X,Y}=0$.
 - But $\rho_{X,Y}=0$ does not imply independence in general.
 
 <details>
@@ -560,23 +550,21 @@ $\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)=0.$
 For constants $a,b$ and random variables $X,Y,Z$:
 
 $$
-\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)
+\mathrm{Cov}(X,Y) = \mathrm{Cov}(Y,X)
 $$
 
 $$
-\operatorname{Cov}(X,X) = \operatorname{Var}(X)
+\mathrm{Cov}(X,X) = \mathrm{Var}(X)
 $$
 
 $$
-\operatorname{Cov}(aX+bY,Z)
-= a\operatorname{Cov}(X,Z) + b\operatorname{Cov}(Y,Z)
+\mathrm{Cov}(aX+bY,Z) = a\mathrm{Cov}(X,Z) + b\mathrm{Cov}(Y,Z)
 $$
 
 For two random variables $X$ and $Y$:
 
 $$
-\operatorname{Var}(X+Y)
-= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)
+\mathrm{Var}(X+Y) = \mathrm{Var}(X) + 2\mathrm{Cov}(X,Y) + \mathrm{Var}(Y)
 $$
 
 <details>

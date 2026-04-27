@@ -54,31 +54,31 @@ $$
 $$
 
 $$
-\sigma_i^2 = \operatorname{Var}(r_i) = \text{variance of the return of asset } i
+\sigma_i^2 = \mathrm{Var}(r_i) = \text{variance of the return of asset } i
 $$
 
 $$
-\sigma_i = \operatorname{SD}(r_i) = \text{standard deviation of the return of asset } i
+\sigma_i = \mathrm{SD}(r_i) = \text{standard deviation of the return of asset } i
 $$
 
 $$
-\sigma_{ij} = \operatorname{Cov}(r_i,r_j)
+\sigma_{ij} = \mathrm{Cov}(r_i,r_j)
 $$
 
 $$
-\sigma_{12} = \operatorname{Cov}(r_1,r_2)
+\sigma_{12} = \mathrm{Cov}(r_1,r_2)
 $$
 
 $$
-\sigma_p^2 = \operatorname{Var}(r_p) = \text{portfolio variance}
+\sigma_p^2 = \mathrm{Var}(r_p) = \text{portfolio variance}
 $$
 
 $$
-\sigma_p = \operatorname{SD}(r_p) = \text{portfolio standard deviation}
+\sigma_p = \mathrm{SD}(r_p) = \text{portfolio standard deviation}
 $$
 
 $$
-\rho_{ij} = \operatorname{Corr}(r_i,r_j) = \frac{\sigma_{ij}}{\sigma_i \sigma_j} \text{ when } \sigma_i,\sigma_j > 0
+\rho_{ij} = \mathrm{Corr}(r_i,r_j) = \frac{\sigma_{ij}}{\sigma_i \sigma_j} \text{ when } \sigma_i,\sigma_j > 0
 $$
 
 $$
@@ -200,9 +200,7 @@ Let the rate of return of asset $i$ be $r_i$.
 The end-of-period wealth is:
 
 $$
-X_1
-= \sum_{i=1}^n w_i X_0(1+r_i)
-= X_0 \sum_{i=1}^n w_i(1+r_i)
+X_1 = \sum_{i=1}^n w_i X_0(1+r_i) = X_0 \sum_{i=1}^n w_i(1+r_i)
 $$
 
 If $r_p$ is the portfolio return, then:
@@ -305,24 +303,19 @@ This parallels the return formula: expectation preserves weighted sums.
 Let:
 
 $$
-\sigma_{ij} = \operatorname{Cov}(r_i,r_j)
+\sigma_{ij} = \mathrm{Cov}(r_i,r_j)
 $$
 
 Then the portfolio variance is:
 
 $$
-\sigma_p^2
-= \operatorname{Var}(r_p)
-= \sum_{i=1}^n \sum_{j=1}^n w_i w_j \sigma_{ij}
+\sigma_p^2 = \mathrm{Var}(r_p) = \sum_{i=1}^n \sum_{j=1}^n w_i w_j \sigma_{ij}
 $$
 
 For two assets:
 
 $$
-\sigma_p^2
-= \alpha^2 \sigma_1^2
-+ (1-\alpha)^2 \sigma_2^2
-+ 2\alpha(1-\alpha)\sigma_{12}
+\sigma_p^2 = \alpha^2 \sigma_1^2 + (1-\alpha)^2 \sigma_2^2 + 2\alpha(1-\alpha)\sigma_{12}
 $$
 
 Using the correlation coefficient, when $\sigma_1,\sigma_2 > 0$,
@@ -334,10 +327,7 @@ $$
 this becomes:
 
 $$
-\sigma_p^2
-= \alpha^2 \sigma_1^2
-+ (1-\alpha)^2 \sigma_2^2
-+ 2\alpha(1-\alpha)\rho_{12}\sigma_1 \sigma_2
+\sigma_p^2 = \alpha^2 \sigma_1^2 + (1-\alpha)^2 \sigma_2^2 + 2\alpha(1-\alpha)\rho_{12}\sigma_1 \sigma_2
 $$
 
 <details>
@@ -388,10 +378,7 @@ smallest possible variance.
 The minimizing weight is:
 
 $$
-\alpha^*
-=
-\frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)}
-{\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
+\alpha^* = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
 $$
 
 So the GMVP weights are:
@@ -403,10 +390,7 @@ $$
 The minimum portfolio variance is:
 
 $$
-(\sigma_p^2)^*
-=
-\frac{\sigma_1^2 \sigma_2^2 (1-\rho_{12}^2)}
-{\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
+(\sigma_p^2)^* = \frac{\sigma_1^2 \sigma_2^2 (1-\rho_{12}^2)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
 $$
 
 The corresponding portfolio mean is:

@@ -73,11 +73,11 @@ C = \text{general cash flow stream}
 $$
 
 $$
-\operatorname{PV}(C) = \text{present value of cash flow stream } C
+\mathrm{PV}(C) = \text{present value of cash flow stream } C
 $$
 
 $$
-\operatorname{PV}(\{(c_i,t_i)\}) = \text{present value of the single cash flow } c_i \text{ at time } t_i
+\mathrm{PV}(\{(c_i,t_i)\}) = \text{present value of the single cash flow } c_i \text{ at time } t_i
 $$
 
 $$
@@ -184,10 +184,7 @@ plus the present value of the redemption value.
 For a coupon bond:
 
 $$
-P
-= \sum_{i=1}^{n}
-\frac{cF/m}{(1+\lambda/m)^i}
-+ \frac{R}{(1+\lambda/m)^n}
+P = \sum_{i=1}^{n} \frac{cF/m}{(1+\lambda/m)^i} + \frac{R}{(1+\lambda/m)^n}
 $$
 
 Interpretation:
@@ -200,32 +197,19 @@ Interpretation:
 If $R = F$, then:
 
 $$
-P
-= \sum_{i=1}^{n}
-\frac{cF/m}{(1+\lambda/m)^i}
-+ \frac{F}{(1+\lambda/m)^n}
+P = \sum_{i=1}^{n} \frac{cF/m}{(1+\lambda/m)^i} + \frac{F}{(1+\lambda/m)^n}
 $$
 
 Using the ordinary annuity formula:
 
 $$
-P
-= F\left[
-\frac{1}{(1+\lambda/m)^n}
-+ \frac{c}{\lambda}
-\left(1-\frac{1}{(1+\lambda/m)^n}\right)
-\right]
+P = F\left[ \frac{1}{(1+\lambda/m)^n} + \frac{c}{\lambda} \left(1-\frac{1}{(1+\lambda/m)^n}\right) \right]
 $$
 
 Equivalently:
 
 $$
-P
-= F
-+ F\left(\frac{c-\lambda}{\lambda}\right)
-\left[
-1-\frac{1}{(1+\lambda/m)^n}
-\right]
+P = F + F\left(\frac{c-\lambda}{\lambda}\right) \left[ 1-\frac{1}{(1+\lambda/m)^n} \right]
 $$
 
 <details>
@@ -312,27 +296,19 @@ At that point, there are $n-k$ coupon payments remaining, plus the
 redemption value at maturity. Hence:
 
 $$
-P_k
-= \sum_{i=1}^{n-k}
-\frac{cF/m}{(1+\lambda/m)^i}
-+ \frac{R}{(1+\lambda/m)^{n-k}}
+P_k = \sum_{i=1}^{n-k} \frac{cF/m}{(1+\lambda/m)^i} + \frac{R}{(1+\lambda/m)^{n-k}}
 $$
 
 If $R = F$, this becomes:
 
 $$
-P_k
-= \sum_{i=1}^{n-k}
-\frac{cF/m}{(1+\lambda/m)^i}
-+ \frac{F}{(1+\lambda/m)^{n-k}}
+P_k = \sum_{i=1}^{n-k} \frac{cF/m}{(1+\lambda/m)^i} + \frac{F}{(1+\lambda/m)^{n-k}}
 $$
 
 The lecture also gives the recursive relation:
 
 $$
-P_{k+1}
-= P_k\left(1+\frac{\lambda}{m}\right)
-- \frac{cF}{m}
+P_{k+1} = P_k\left(1+\frac{\lambda}{m}\right) - \frac{cF}{m}
 $$
 
 Interpretation: after one period, the current price grows by the
@@ -469,9 +445,7 @@ It pays coupons forever. Since each coupon is $\frac{cF}{m}$ and the
 per-period yield is $\frac{\lambda}{m}$:
 
 $$
-P
-= \frac{cF/m}{\lambda/m}
-= \frac{cF}{\lambda}
+P = \frac{cF/m}{\lambda/m} = \frac{cF}{\lambda}
 $$
 
 So:
@@ -515,12 +489,7 @@ $$
 the Macaulay duration $D$ is:
 
 $$
-D
-= \frac{
-\sum_{i=1}^q t_i \operatorname{PV}(\{(c_i,t_i)\})
-}{
-\operatorname{PV}(C)
-}
+D = \frac{ \sum_{i=1}^q t_i \mathrm{PV}(\{(c_i,t_i)\}) }{ \mathrm{PV}(C) }
 $$
 
 Equivalently:
@@ -532,12 +501,7 @@ $$
 where:
 
 $$
-w_i
-= \frac{
-\operatorname{PV}(\{(c_i,t_i)\})
-}{
-\operatorname{PV}(C)
-}
+w_i = \frac{ \mathrm{PV}(\{(c_i,t_i)\}) }{ \mathrm{PV}(C) }
 $$
 
 If all cash flows are non-negative, then:
@@ -589,38 +553,19 @@ bond cash inflows are coupon payments plus the redemption value.
 The bond price is:
 
 $$
-P
-= \sum_{i=1}^{n}
-\frac{cF/m}{(1+\lambda/m)^i}
-+ \frac{R}{(1+\lambda/m)^n}
+P = \sum_{i=1}^{n} \frac{cF/m}{(1+\lambda/m)^i} + \frac{R}{(1+\lambda/m)^n}
 $$
 
 The bond duration is:
 
 $$
-D
-= \frac{1}{P}
-\left[
-\sum_{i=1}^{n}
-\frac{(i/m)(cF/m)}{(1+\lambda/m)^i}
-+ \frac{(n/m)R}{(1+\lambda/m)^n}
-\right]
+D = \frac{1}{P} \left[ \sum_{i=1}^{n} \frac{(i/m)(cF/m)}{(1+\lambda/m)^i} + \frac{(n/m)R}{(1+\lambda/m)^n} \right]
 $$
 
 If $R = F$, then the face value cancels out:
 
 $$
-D
-=
-\frac{
-\sum_{i=1}^{n}
-\frac{(i/m)(c/m)}{(1+\lambda/m)^i}
-+ \frac{n/m}{(1+\lambda/m)^n}
-}{
-\sum_{i=1}^{n}
-\frac{c/m}{(1+\lambda/m)^i}
-+ \frac{1}{(1+\lambda/m)^n}
-}
+D = \frac{ \sum_{i=1}^{n} \frac{(i/m)(c/m)}{(1+\lambda/m)^i} + \frac{n/m}{(1+\lambda/m)^n} }{ \sum_{i=1}^{n} \frac{c/m}{(1+\lambda/m)^i} + \frac{1}{(1+\lambda/m)^n} }
 $$
 
 Let:
@@ -632,40 +577,20 @@ $$
 Then:
 
 $$
-D
-=
-\frac{
-\sum_{i=1}^{n}
-\frac{(i/m)\gamma}{(1+\mu)^i}
-+ \frac{n/m}{(1+\mu)^n}
-}{
-\sum_{i=1}^{n}
-\frac{\gamma}{(1+\mu)^i}
-+ \frac{1}{(1+\mu)^n}
-}
+D = \frac{ \sum_{i=1}^{n} \frac{(i/m)\gamma}{(1+\mu)^i} + \frac{n/m}{(1+\mu)^n} }{ \sum_{i=1}^{n} \frac{\gamma}{(1+\mu)^i} + \frac{1}{(1+\mu)^n} }
 $$
 
 After simplification:
 
 $$
-D
-=
-\frac{1+\mu}{m\mu}
--
-\frac{1+\mu+n(\gamma-\mu)}
-{m\gamma\left[(1+\mu)^n-1\right]+m\mu}
+D = \frac{1+\mu}{m\mu} - \frac{1+\mu+n(\gamma-\mu)} {m\gamma\left[(1+\mu)^n-1\right]+m\mu}
 $$
 
 If the bond is priced at par, then $P = F$ and $\mu = \gamma$. In this
 case:
 
 $$
-D
-=
-\frac{1+\mu}{m\mu}
-\left(
-1-\frac{1}{(1+\mu)^n}
-\right)
+D = \frac{1+\mu}{m\mu} \left( 1-\frac{1}{(1+\mu)^n} \right)
 $$
 
 <details>
@@ -700,15 +625,13 @@ For a perpetual bond, take $n \to \infty$ in the duration formula.
 The duration is:
 
 $$
-D
-= \frac{1+\mu}{m\mu}
+D = \frac{1+\mu}{m\mu}
 $$
 
 Since $\mu = \frac{\lambda}{m}$:
 
 $$
-D
-= \frac{1+\lambda/m}{\lambda}
+D = \frac{1+\lambda/m}{\lambda}
 $$
 
 where $\lambda$ is the nominal annual yield.

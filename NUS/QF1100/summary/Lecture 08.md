@@ -56,12 +56,11 @@ y = y_T = \text{cash flow of the hedged position at time } T
 $$
 
 $$
-\beta = \frac{\operatorname{Cov}(S_T,F_T)}{\operatorname{Var}(F_T)}
-= \text{optimal hedge ratio per unit of exposure}
+\beta = \frac{\mathrm{Cov}(S_T,F_T)}{\mathrm{Var}(F_T)} = \text{optimal hedge ratio per unit of exposure}
 $$
 
 $$
-\rho_{S,F} = \operatorname{Corr}(S_T,F_T) \text{ when } \sigma_S,\sigma_F > 0
+\rho_{S,F} = \mathrm{Corr}(S_T,F_T) \text{ when } \sigma_S,\sigma_F > 0
 $$
 
 $$
@@ -69,29 +68,23 @@ $$
 $$
 
 $$
-\sigma_S = \operatorname{SD}(S_T), \qquad
-\sigma_F = \operatorname{SD}(F_T), \qquad
-\sigma_y = \operatorname{SD}(y)
+\sigma_S = \mathrm{SD}(S_T), \qquad \sigma_F = \mathrm{SD}(F_T), \qquad \sigma_y = \mathrm{SD}(y)
 $$
 
 $$
-\operatorname{Var}(S_T),\operatorname{Var}(F_T),\operatorname{Var}(y)
-= \text{variances of } S_T,\ F_T,\ \text{and } y
+\mathrm{Var}(S_T),\mathrm{Var}(F_T),\mathrm{Var}(y) = \text{variances of } S_T,\ F_T,\ \text{and } y
 $$
 
 $$
-\operatorname{Cov}(S_T,F_T)
-= \text{covariance between the spot exposure and the futures price}
+\mathrm{Cov}(S_T,F_T) = \text{covariance between the spot exposure and the futures price}
 $$
 
 $$
-\operatorname{Corr}(S_T,F_T)
-= \text{correlation between the spot exposure and the futures price}
+\mathrm{Corr}(S_T,F_T) = \text{correlation between the spot exposure and the futures price}
 $$
 
 $$
-\operatorname{basis} = \text{spot price of asset to be hedged}
-- \text{futures price of contract used}
+\mathrm{basis} = \text{spot price of asset to be hedged} - \text{futures price of contract used}
 $$
 
 Unless otherwise stated, the minimum-variance hedge derivation assumes
@@ -220,9 +213,7 @@ contract size matters so much.
 One measure of hedging imperfection is the basis:
 
 $$
-\operatorname{basis}
-= \text{spot price of asset to be hedged}
-- \text{futures price of contract used}
+\mathrm{basis} = \text{spot price of asset to be hedged} - \text{futures price of contract used}
 $$
 
 Basis measures the mismatch between the asset exposure and the futures
@@ -269,10 +260,7 @@ Here:
 The variance of the cash flow is:
 
 $$
-\operatorname{Var}(y)
-= W^2\operatorname{Var}(S_T)
-- 2W\operatorname{Cov}(S_T,F_T)h
-+ \operatorname{Var}(F_T)h^2
+\mathrm{Var}(y) = W^2\mathrm{Var}(S_T) - 2W\mathrm{Cov}(S_T,F_T)h + \mathrm{Var}(F_T)h^2
 $$
 
 This is a quadratic function of $h$.
@@ -281,32 +269,26 @@ To minimize the risk, differentiate with respect to $h$ and set the
 result equal to zero:
 
 $$
--2W\operatorname{Cov}(S_T,F_T)
-+ 2\operatorname{Var}(F_T)h = 0
+-2W\mathrm{Cov}(S_T,F_T) + 2\mathrm{Var}(F_T)h = 0
 $$
 
 Hence the minimum-variance hedge is:
 
 $$
-h
-= W\frac{\operatorname{Cov}(S_T,F_T)}
-{\operatorname{Var}(F_T)}
+h = W\frac{\mathrm{Cov}(S_T,F_T)} {\mathrm{Var}(F_T)}
 $$
 
 Using correlation and standard deviations, when $\sigma_F > 0$,
 
 $$
-h
-= W\rho_{S,F}\frac{\sigma_S}{\sigma_F}
+h = W\rho_{S,F}\frac{\sigma_S}{\sigma_F}
 $$
 
 The optimal hedge ratio per unit of exposure, when
-$\operatorname{Var}(F_T)>0$, is:
+$\mathrm{Var}(F_T)>0$, is:
 
 $$
-\beta
-= \frac{\operatorname{Cov}(S_T,F_T)}
-{\operatorname{Var}(F_T)}
+\beta = \frac{\mathrm{Cov}(S_T,F_T)} {\mathrm{Var}(F_T)}
 $$
 
 so:
@@ -363,24 +345,19 @@ best explains the spot exposure.
 Substituting the optimal $h$ into the variance formula gives:
 
 $$
-\operatorname{Var}(y)
-= W^2\operatorname{Var}(S_T)
-- \frac{W^2\operatorname{Cov}(S_T,F_T)^2}
-{\operatorname{Var}(F_T)}
+\mathrm{Var}(y) = W^2\mathrm{Var}(S_T) - \frac{W^2\mathrm{Cov}(S_T,F_T)^2} {\mathrm{Var}(F_T)}
 $$
 
 Equivalently:
 
 $$
-\operatorname{Var}(y)
-= W^2\operatorname{Var}(S_T)(1-\rho_{S,F}^2)
+\mathrm{Var}(y) = W^2\mathrm{Var}(S_T)(1-\rho_{S,F}^2)
 $$
 
 Hence the resulting standard deviation is:
 
 $$
-\sigma_y
-= \sqrt{1-\rho_{S,F}^2}\,W\sigma_S
+\sigma_y = \sqrt{1-\rho_{S,F}^2}\,W\sigma_S
 $$
 
 The unhedged risk is:
@@ -492,9 +469,7 @@ $$
 Hence:
 
 $$
-\operatorname{Cov}(S_T,F_T)
-= \operatorname{Cov}(S_T,S_T)
-= \operatorname{Var}(S_T)
+\mathrm{Cov}(S_T,F_T) = \mathrm{Cov}(S_T,S_T) = \mathrm{Var}(S_T)
 $$
 
 Therefore:
@@ -512,7 +487,7 @@ $$
 The minimum variance becomes:
 
 $$
-\operatorname{Var}(y)=0
+\mathrm{Var}(y)=0
 $$
 
 So the hedge is perfect.
@@ -555,5 +530,5 @@ the basis problem disappears.
 - A perfect futures hedge completely eliminates risk, but requires a very close match between exposure and contract.
 - Basis measures the mismatch between the spot exposure and the futures contract used.
 - Minimum-variance hedging chooses the futures position that minimizes the variance of the hedged cash flow.
-- The optimal hedge ratio is $\beta=\operatorname{Cov}(S_T,F_T)/\operatorname{Var}(F_T)$ when $\operatorname{Var}(F_T)>0$.
+- The optimal hedge ratio is $\beta=\mathrm{Cov}(S_T,F_T)/\mathrm{Var}(F_T)$ when $\mathrm{Var}(F_T)>0$.
 - Hedge effectiveness depends on $\rho_{S,F}^2$: stronger absolute correlation means a better hedge.
