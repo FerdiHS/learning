@@ -159,15 +159,11 @@ For a future seller:
 
 That is why:
 
-$$
-WS_T + W(F(0,T)-S_T)=WF(0,T).
-$$
+$\displaystyle WS_T + W(F(0,T)-S_T)=WF(0,T).$
 
 For a future buyer, the same cancellation happens with opposite sign:
 
-$$
--WS_T + W(S_T-F(0,T))=-WF(0,T).
-$$
+$\displaystyle -WS_T + W(S_T-F(0,T))=-WF(0,T).$
 
 In both cases, the spot-price uncertainty disappears completely.
 
@@ -330,34 +326,25 @@ offsets the original exposure.
 
 The algebra comes from:
 
-$$
-y=-WS_T+hF_T-hF_0.
-$$
+$\displaystyle y=-WS_T+hF_T-hF_0.$
 
 Since $F_0$ is known at time $0$, it is a constant, so it does not affect
 variance. Therefore:
 
-$$
-\operatorname{Var}(y)=\operatorname{Var}(-WS_T+hF_T).
-$$
+$\displaystyle \operatorname{Var}(y)=\operatorname{Var}(-WS_T+hF_T).$
 
 Expanding with
 $\operatorname{Var}(aX+bY)=a^2\operatorname{Var}(X)+b^2\operatorname{Var}(Y)+2ab\operatorname{Cov}(X,Y)$
 gives:
 
-$$
-\operatorname{Var}(y)
-=W^2\operatorname{Var}(S_T)+h^2\operatorname{Var}(F_T)-2Wh\operatorname{Cov}(S_T,F_T).
-$$
+$\displaystyle \operatorname{Var}(y) =W^2\operatorname{Var}(S_T)+h^2\operatorname{Var}(F_T)-2Wh\operatorname{Cov}(S_T,F_T).$
 
 Because this is a quadratic in $h$ with positive coefficient
 $\operatorname{Var}(F_T)$, its minimum occurs where the derivative is zero.
 
 The formula
 
-$$
-h=W\frac{\operatorname{Cov}(S_T,F_T)}{\operatorname{Var}(F_T)}
-$$
+$\displaystyle h=W\frac{\operatorname{Cov}(S_T,F_T)}{\operatorname{Var}(F_T)}$
 
 has a natural interpretation:
 
@@ -423,31 +410,21 @@ futures contract.
 
 The term
 
-$$
-1-\rho_{S,F}^2
-$$
+$\displaystyle 1-\rho_{S,F}^2$
 
 is the fraction of variance that remains after optimal hedging.
 
 This comes from substituting
 
-$$
-\operatorname{Cov}(S_T,F_T)=\rho_{S,F}\sigma_S\sigma_F
-$$
+$\displaystyle \operatorname{Cov}(S_T,F_T)=\rho_{S,F}\sigma_S\sigma_F$
 
 into the minimized variance formula:
 
-$$
-W^2\operatorname{Var}(S_T)
-- \frac{W^2\operatorname{Cov}(S_T,F_T)^2}{\operatorname{Var}(F_T)}
-= W^2\sigma_S^2-\frac{W^2\rho_{S,F}^2\sigma_S^2\sigma_F^2}{\sigma_F^2}.
-$$
+$\displaystyle W^2\operatorname{Var}(S_T) - \frac{W^2\operatorname{Cov}(S_T,F_T)^2}{\operatorname{Var}(F_T)} = W^2\sigma_S^2-\frac{W^2\rho_{S,F}^2\sigma_S^2\sigma_F^2}{\sigma_F^2}.$
 
 That simplifies to:
 
-$$
-W^2\sigma_S^2(1-\rho_{S,F}^2).
-$$
+$\displaystyle W^2\sigma_S^2(1-\rho_{S,F}^2).$
 
 So:
 
@@ -558,15 +535,11 @@ hedge ratio becomes exactly $1$.
 
 In the formula:
 
-$$
-\beta=\frac{\operatorname{Cov}(S_T,F_T)}{\operatorname{Var}(F_T)},
-$$
+$\displaystyle \beta=\frac{\operatorname{Cov}(S_T,F_T)}{\operatorname{Var}(F_T)},$
 
 setting $F_T=S_T$ gives:
 
-$$
-\beta=\frac{\operatorname{Var}(S_T)}{\operatorname{Var}(S_T)}=1.
-$$
+$\displaystyle \beta=\frac{\operatorname{Var}(S_T)}{\operatorname{Var}(S_T)}=1.$
 
 Then the hedged cash flow becomes deterministic, so its variance is zero.
 

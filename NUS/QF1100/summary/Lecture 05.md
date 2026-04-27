@@ -147,37 +147,23 @@ So a rate of return behaves like an interest rate over a single period.
 
 Total return tells us the multiplicative growth factor of the investment:
 
-$$
-R=\frac{P_1}{P_0}
-$$
+$\displaystyle R=\frac{P_1}{P_0}$
 
 Rate of return tells us the gain relative to the initial investment:
 
-$$
-r=\frac{P_1-P_0}{P_0}
-$$
+$\displaystyle r=\frac{P_1-P_0}{P_0}$
 
 Since
 
-$$
-\frac{P_1}{P_0}
-=
-\frac{P_0+(P_1-P_0)}{P_0}
-=
-1+\frac{P_1-P_0}{P_0},
-$$
+$\displaystyle \frac{P_1}{P_0} = \frac{P_0+(P_1-P_0)}{P_0} = 1+\frac{P_1-P_0}{P_0},$
 
 we get:
 
-$$
-R=1+r
-$$
+$\displaystyle R=1+r$
 
 Rearranging gives:
 
-$$
-P_1=(1+r)P_0,
-$$
+$\displaystyle P_1=(1+r)P_0,$
 
 which is why a one-period return acts like a one-period interest rate.
 </details>
@@ -226,22 +212,16 @@ In a short sale, you benefit when the asset price falls.
 You first receive $P_0$ from selling the borrowed asset, then later pay
 $P_1$ to buy it back. So the dollar profit is:
 
-$$
-P_0-P_1
-$$
+$\displaystyle P_0-P_1$
 
 That is positive exactly when:
 
-$$
-P_1<P_0
-$$
+$\displaystyle P_1<P_0$
 
 The "return on short sale" formula can look strange because the lecture
 treats the initial and final cash flows using negative signs:
 
-$$
-R=\frac{-P_1}{-P_0}=\frac{P_1}{P_0}
-$$
+$\displaystyle R=\frac{-P_1}{-P_0}=\frac{P_1}{P_0}$
 
 So this return convention does not track profit direction in the same
 intuitive way as a long position. A profitable short sale has a positive
@@ -261,11 +241,7 @@ So returns can be studied using probability.
 
 Once $P_1$ is unknown, formulas such as
 
-$$
-R=\frac{P_1}{P_0},
-\qquad
-r=\frac{P_1-P_0}{P_0}
-$$
+$\displaystyle R=\frac{P_1}{P_0}, \qquad r=\frac{P_1-P_0}{P_0}$
 
 become random as well. That is why return analysis naturally leads into
 random variables, probability, expectation, and variance.
@@ -283,9 +259,7 @@ A random experiment produces an outcome $\omega \in \Omega$.
 
 A random variable $X$ then converts that outcome into a number:
 
-$$
-X(\omega)
-$$
+$\displaystyle X(\omega)$
 
 This lets us describe uncertain quantities numerically, which is why
 random variables are the bridge from probability to finance.
@@ -312,9 +286,7 @@ with mathematically.
 In the discrete case, we can list the possible values and assign a
 probability to each one. That is exactly what the pmf does:
 
-$$
-p(x)=P(X=x)
-$$
+$\displaystyle p(x)=P(X=x)$
 
 So the pmf is the basic input used to compute expectations, variances, and
 other summaries.
@@ -372,9 +344,7 @@ $$
 
 The expected value is a probability-weighted average:
 
-$$
-E(X)=\sum_x x\,p(x)
-$$
+$\displaystyle E(X)=\sum_x x\,p(x)$
 
 It describes the center of the distribution, or the long-run average if
 the experiment were repeated many times.
@@ -382,9 +352,7 @@ the experiment were repeated many times.
 The expectation rules come from distributing sums and constants through
 the weighted average. For example:
 
-$$
-E(aX+bY)=aE(X)+bE(Y)
-$$
+$\displaystyle E(aX+bY)=aE(X)+bE(Y)$
 
 because expectation is linear.
 
@@ -417,21 +385,15 @@ Variance measures spread around the mean.
 
 The deviation from the mean is:
 
-$$
-X-E(X)
-$$
+$\displaystyle X-E(X)$
 
 Squaring removes sign and emphasizes larger deviations:
 
-$$
-(X-E(X))^2
-$$
+$\displaystyle (X-E(X))^2$
 
 Taking expectation gives the average squared distance from the mean:
 
-$$
-\operatorname{Var}(X)=E\left[(X-E(X))^2\right]
-$$
+$\displaystyle \operatorname{Var}(X)=E\left[(X-E(X))^2\right]$
 </details>
 
 ## Standard Deviation
@@ -456,9 +418,7 @@ The standard deviation has the same units as $X$.
 Variance is useful mathematically, but it is measured in squared units.
 Standard deviation fixes that by taking the square root:
 
-$$
-\operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}
-$$
+$\displaystyle \operatorname{SD}(X)=\sqrt{\operatorname{Var}(X)}$
 
 So it measures spread in the same units as the original random variable.
 </details>
@@ -501,19 +461,14 @@ their means.
 
 So:
 
-$$
-\operatorname{Cov}(X,Y)
-=E\left[(X-E(X))(Y-E(Y))\right]
-$$
+$\displaystyle \operatorname{Cov}(X,Y) =E\left[(X-E(X))(Y-E(Y))\right]$
 
 is positive for positive linear association and negative for negative
 linear association.
 
 Expanding the product gives the equivalent formula:
 
-$$
-\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)
-$$
+$\displaystyle \operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)$
 </details>
 
 ## Correlation Coefficient
@@ -550,11 +505,7 @@ compare across problems.
 
 Correlation removes the scale by dividing by the standard deviations:
 
-$$
-\rho_{X,Y}
-=\frac{\operatorname{Cov}(X,Y)}
-{\operatorname{SD}(X)\operatorname{SD}(Y)}
-$$
+$\displaystyle \rho_{X,Y} =\frac{\operatorname{Cov}(X,Y)} {\operatorname{SD}(X)\operatorname{SD}(Y)}$
 
 That is why correlation is unit-free and, when defined, always lies between
 $-1$ and $1$.
@@ -589,9 +540,7 @@ information about the other.
 
 For discrete random variables, that is expressed by the factorization:
 
-$$
-P(X=x,Y=y)=P(X=x)P(Y=y)
-$$
+$\displaystyle P(X=x,Y=y)=P(X=x)P(Y=y)$
 
 Independence implies zero covariance, but the converse fails in general:
 two variables can have no linear relationship while still being dependent
@@ -599,15 +548,11 @@ in a nonlinear way.
 
 The reason independence implies zero covariance is that independence gives
 
-$$
-E(XY)=E(X)E(Y),
-$$
+$\displaystyle E(XY)=E(X)E(Y),$
 
 so:
 
-$$
-\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=0.
-$$
+$\displaystyle \operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=0.$
 </details>
 
 ## Properties of Covariance and Variance
@@ -642,17 +587,11 @@ combinations.
 
 The most important one here is:
 
-$$
-\operatorname{Var}(X+Y)
-= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)
-$$
+$\displaystyle \operatorname{Var}(X+Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)$
 
 It comes from expanding:
 
-$$
-\operatorname{Var}(X+Y)
-= E\left[(X+Y-E(X)-E(Y))^2\right]
-$$
+$\displaystyle \operatorname{Var}(X+Y) = E\left[(X+Y-E(X)-E(Y))^2\right]$
 
 The cross term appears twice, which is why the covariance coefficient is
 $2$, not $1$.
