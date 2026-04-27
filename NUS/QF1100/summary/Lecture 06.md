@@ -90,13 +90,13 @@ $$
 $$
 
 $$
-\alpha^* = \text{weight of asset 1 in the global minimum-variance portfolio}
+\alpha^{\ast} = \text{weight of asset 1 in the global minimum-variance portfolio}
 $$
 
 The corresponding weight of asset 2 in the GMVP is:
 
 $$
-1-\alpha^*
+1-\alpha^{\ast}
 $$
 
 ## Portfolio
@@ -378,25 +378,25 @@ smallest possible variance.
 The minimizing weight is:
 
 $$
-\alpha^* = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
+\alpha^{\ast} = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
 $$
 
 So the GMVP weights are:
 
 $$
-w_1 = \alpha^*, \qquad w_2 = 1-\alpha^*
+w_1 = \alpha^{\ast}, \qquad w_2 = 1-\alpha^{\ast}
 $$
 
 The minimum portfolio variance is:
 
 $$
-(\sigma_p^2)^* = \frac{\sigma_1^2 \sigma_2^2 (1-\rho_{12}^2)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
+(\sigma_p^2)^{\ast} = \frac{\sigma_1^2 \sigma_2^2 (1-\rho_{12}^2)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}
 $$
 
 The corresponding portfolio mean is:
 
 $$
-(\mu_p)^* = \alpha^* \mu_1 + (1-\alpha^*)\mu_2
+(\mu_p)^{\ast} = \alpha^{\ast} \mu_1 + (1-\alpha^{\ast})\mu_2
 $$
 
 This portfolio is called the global minimum-variance portfolio because it
@@ -411,7 +411,7 @@ variable $\alpha$, since the other weight is $1-\alpha$.
 That makes $\sigma_p^2$ a quadratic function of $\alpha$, so its graph is
 a parabola. The GMVP is the lowest point of that parabola.
 
-The minimizing value $\alpha^*$ can be found by:
+The minimizing value $\alpha^{\ast}$ can be found by:
 
 - completing the square, or
 - differentiating $\sigma_p^2$ with respect to $\alpha$ and setting the
@@ -419,7 +419,7 @@ The minimizing value $\alpha^*$ can be found by:
 
 The resulting weight
 
-$\alpha^* = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}$
+$\alpha^{\ast} = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}$
 
 gives the smallest possible portfolio variance across all two-asset
 portfolios.
@@ -428,8 +428,8 @@ Intuitively, the GMVP balances the assets so that diversification is used
 as much as possible. The lower the correlation, the more diversification
 can reduce risk.
 
-The formula for $(\sigma_p^2)^*$ is the minimum value of the quadratic
-once $\alpha=\alpha^*$ is substituted back in.
+The formula for $(\sigma_p^2)^{\ast}$ is the minimum value of the quadratic
+once $\alpha=\alpha^{\ast}$ is substituted back in.
 </details>
 
 ## Key Takeaways
