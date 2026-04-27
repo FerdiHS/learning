@@ -131,7 +131,7 @@ A portfolio is just a way of splitting total wealth across several assets.
 
 The condition
 
-$\displaystyle \sum_{i=1}^n X_{0i}=X_0$
+$\sum_{i=1}^n X_{0i}=X_0$
 
 says all initial wealth must be allocated somewhere.
 
@@ -176,15 +176,15 @@ The weights tell us what fraction of total wealth is placed in each asset.
 
 Since
 
-$\displaystyle X_{0i}=w_iX_0,$
+$X_{0i}=w_iX_0,$
 
 summing over all assets gives:
 
-$\displaystyle \sum_{i=1}^n X_{0i} = X_0\sum_{i=1}^n w_i.$
+$\sum_{i=1}^n X_{0i} = X_0\sum_{i=1}^n w_i.$
 
 But the left-hand side equals $X_0$, so:
 
-$\displaystyle \sum_{i=1}^n w_i = 1.$
+$\sum_{i=1}^n w_i = 1.$
 
 So weights always add up to 100% of the investor's wealth, even if some
 positions are negative because of short-selling.
@@ -239,21 +239,21 @@ $$
 Each asset grows its allocated wealth by its own return factor. Asset $i$
 starts with $w_iX_0$ and ends with:
 
-$\displaystyle w_iX_0(1+r_i)$
+$w_iX_0(1+r_i)$
 
 Adding over all assets gives total end wealth.
 
 Since portfolio return $r_p$ is defined by:
 
-$\displaystyle X_1=X_0(1+r_p),$
+$X_1=X_0(1+r_p),$
 
 dividing both sides by $X_0$ gives:
 
-$\displaystyle 1+r_p=\sum_{i=1}^n w_i(1+r_i)$
+$1+r_p=\sum_{i=1}^n w_i(1+r_i)$
 
 and because $\sum_i w_i=1$, this simplifies to:
 
-$\displaystyle r_p=\sum_{i=1}^n w_i r_i.$
+$r_p=\sum_{i=1}^n w_i r_i.$
 
 So portfolio return is a weighted combination of the asset returns.
 
@@ -288,11 +288,11 @@ $$
 
 Since
 
-$\displaystyle r_p=\sum_{i=1}^n w_i r_i,$
+$r_p=\sum_{i=1}^n w_i r_i,$
 
 taking expectation and using linearity gives:
 
-$\displaystyle E(r_p) = E\left(\sum_{i=1}^n w_i r_i\right) = \sum_{i=1}^n w_i E(r_i) = \sum_{i=1}^n w_i \mu_i.$
+$E(r_p) = E(\sum_{i=1}^n w_i r_i) = \sum_{i=1}^n w_i E(r_i) = \sum_{i=1}^n w_i \mu_i.$
 
 So the portfolio mean is simply the weighted combination of individual asset
 means.
@@ -348,16 +348,16 @@ because the assets may move together.
 
 Starting from the two-asset formula
 
-$\displaystyle r_p=\alpha r_1+(1-\alpha)r_2,$
+$r_p=\alpha r_1+(1-\alpha)r_2,$
 
 the variance-of-a-sum formula gives:
 
-$\displaystyle \operatorname{Var}(X+Y) = \operatorname{Var}(X)+\operatorname{Var}(Y)+2\operatorname{Cov}(X,Y).$
+$\mathrm{Var}(X+Y) = \mathrm{Var}(X)+\mathrm{Var}(Y)+2\mathrm{Cov}(X,Y).$
 
 Applying this with
 $X=\alpha r_1$ and $Y=(1-\alpha)r_2$ gives:
 
-$\displaystyle \sigma_p^2 = \alpha^2\sigma_1^2 + (1-\alpha)^2\sigma_2^2 + 2\alpha(1-\alpha)\sigma_{12}.$
+$\sigma_p^2 = \alpha^2\sigma_1^2 + (1-\alpha)^2\sigma_2^2 + 2\alpha(1-\alpha)\sigma_{12}.$
 
 The covariance term is what captures diversification.
 
@@ -371,7 +371,7 @@ when it is defined.
 
 In the general $n$-asset case, the double sum
 
-$\displaystyle \sum_{i=1}^n \sum_{j=1}^n w_i w_j \sigma_{ij}$
+$\sum_{i=1}^n \sum_{j=1}^n w_i w_j \sigma_{ij}$
 
 collects all own-variance terms ($i=j$) and all cross-covariance terms
 ($i \ne j$).
@@ -435,7 +435,7 @@ The minimizing value $\alpha^*$ can be found by:
 
 The resulting weight
 
-$\displaystyle \alpha^* = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}$
+$\alpha^* = \frac{\sigma_2(\sigma_2-\rho_{12}\sigma_1)} {\sigma_1^2+\sigma_2^2-2\rho_{12}\sigma_1 \sigma_2}$
 
 gives the smallest possible portfolio variance across all two-asset
 portfolios.

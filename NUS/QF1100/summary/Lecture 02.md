@@ -164,24 +164,24 @@ Finding the present value of a future payment is called discounting.
 If one unit at time $0$ grows to $a(t)$ units at time $t$, then the amount
 at time $0$ that grows to $c$ at time $t$ must be:
 
-$\displaystyle \frac{c}{a(t)}$
+$\frac{c}{a(t)}$
 
 because:
 
-$\displaystyle \frac{c}{a(t)}a(t)=c$
+$\frac{c}{a(t)}a(t)=c$
 
 When the effective interest rate is constant:
 
-$\displaystyle a(t)=(1+r)^t$
+$a(t)=(1+r)^t$
 
 so:
 
-$\displaystyle \operatorname{PV}=\frac{c}{(1+r)^t}$
+$\mathrm{PV}=\frac{c}{(1+r)^t}$
 
 For a stream of cash flows, present value is additive. Each cash flow is
 discounted to time $0$, then added:
 
-$\displaystyle \operatorname{PV}(C)=\sum_{i=1}^n \frac{c_i}{a(t_i)}$
+$\mathrm{PV}(C)=\sum_{i=1}^n \frac{c_i}{a(t_i)}$
 
 </details>
 
@@ -220,24 +220,24 @@ $$
 The present value of $C$ is its value at time $0$. To move that value to
 time $t$, accumulate it by $a(t)$:
 
-$\displaystyle \operatorname{TV}_t(C)=\operatorname{PV}(C)a(t)$
+$\mathrm{TV}_t(C)=\mathrm{PV}(C)a(t)$
 
 To move from time $s$ to time $t$, multiply by the accumulation factor
 from $s$ to $t$:
 
-$\displaystyle a(s,t)=\frac{a(t)}{a(s)}$
+$a(s,t)=\frac{a(t)}{a(s)}$
 
 So:
 
-$\displaystyle \operatorname{TV}_t(C) =\frac{a(t)}{a(s)}\operatorname{TV}_s(C)$
+$\mathrm{TV}_t(C) =\frac{a(t)}{a(s)}\mathrm{TV}_s(C)$
 
 When $a(t)=(1+r)^t$:
 
-$\displaystyle \frac{a(t)}{a(s)} =\frac{(1+r)^t}{(1+r)^s} =(1+r)^{t-s}$
+$\frac{a(t)}{a(s)} =\frac{(1+r)^t}{(1+r)^s} =(1+r)^{t-s}$
 
 For each cash flow $c_i$ at time $t_i$, its value at time $t$ is:
 
-$\displaystyle \frac{c_i}{(1+r)^{t_i-t}}$
+$\frac{c_i}{(1+r)^{t_i-t}}$
 
 If $t_i>t$, this discounts backward. If $t_i<t$, the exponent is negative,
 so the expression accumulates forward.
@@ -258,15 +258,15 @@ $t$.
 
 If two cash flow streams $C$ and $D$ have the same present value, say:
 
-$\displaystyle \operatorname{PV}(C)=\operatorname{PV}(D)$
+$\mathrm{PV}(C)=\mathrm{PV}(D)$
 
 then their time values at time $t$ are:
 
-$\displaystyle \operatorname{TV}_t(C)=\operatorname{PV}(C)a(t)$
+$\mathrm{TV}_t(C)=\mathrm{PV}(C)a(t)$
 
 and:
 
-$\displaystyle \operatorname{TV}_t(D)=\operatorname{PV}(D)a(t)$
+$\mathrm{TV}_t(D)=\mathrm{PV}(D)a(t)$
 
 Since the present values are equal, the time values are also equal.
 
@@ -312,9 +312,9 @@ NPV is just present value applied to signed cash flows.
 Positive cash flows are benefits and negative cash flows are costs.
 Discount every cash flow to time $0$, then add:
 
-$\displaystyle \operatorname{NPV}(C)=\sum_{i=1}^n \frac{c_i}{a(t_i)}$
+$\mathrm{NPV}(C)=\sum_{i=1}^n \frac{c_i}{a(t_i)}$
 
-If $\operatorname{NPV}>0$, the benefits are worth more today than the
+If $\mathrm{NPV}>0$, the benefits are worth more today than the
 costs, using the chosen discount rate.
 
 </details>
@@ -349,18 +349,18 @@ usually time $0$.
 
 If two streams are equivalent at time $0$, then:
 
-$\displaystyle \operatorname{PV}(C)=\operatorname{PV}(D)$
+$\mathrm{PV}(C)=\mathrm{PV}(D)$
 
 If one side is the zero cash flow stream, its present value is $0$, so the
 equation becomes a zero-sum present value equation.
 
 Each cash flow $c_i$ is discounted to time $0$:
 
-$\displaystyle \frac{c_i}{(1+r)^i}$
+$\frac{c_i}{(1+r)^i}$
 
 Adding all discounted cash flows gives:
 
-$\displaystyle \sum_{i=0}^n \frac{c_i}{(1+r)^i}$
+$\sum_{i=0}^n \frac{c_i}{(1+r)^i}$
 
 Setting the sum equal to $0$ means the stream exactly balances the zero
 cash flow stream at the chosen rate $r$.
@@ -403,19 +403,19 @@ IRR is the rate that makes the net present value equal to zero.
 
 Using:
 
-$\displaystyle x=\frac{1}{1+r}$
+$x=\frac{1}{1+r}$
 
 we have:
 
-$\displaystyle \frac{1}{(1+r)^i}=x^i$
+$\frac{1}{(1+r)^i}=x^i$
 
 So:
 
-$\displaystyle \sum_{i=0}^n \frac{c_i}{(1+r)^i}=0$
+$\sum_{i=0}^n \frac{c_i}{(1+r)^i}=0$
 
 becomes:
 
-$\displaystyle c_0+c_1x+c_2x^2+\cdots+c_nx^n=0$
+$c_0+c_1x+c_2x^2+\cdots+c_nx^n=0$
 
 This is a polynomial of degree at most $n$, so it has at most $n$ distinct
 real roots. This is why cash flows may have more than one IRR.
@@ -447,16 +447,16 @@ non-negative inflows, and the total cash flow is positive.
 
 Let:
 
-$\displaystyle f(r)=\sum_{i=0}^n \frac{c_i}{(1+r)^i}$
+$f(r)=\sum_{i=0}^n \frac{c_i}{(1+r)^i}$
 
 At $r=0$:
 
-$\displaystyle f(0)=c_0+c_1+\cdots+c_n>0$
+$f(0)=c_0+c_1+\cdots+c_n>0$
 
 As $r$ becomes very large, the future cash flows are heavily discounted,
 so:
 
-$\displaystyle f(r)\to c_0<0$
+$f(r)\to c_0<0$
 
 Since $f(r)$ moves from positive to negative, at least one root exists.
 
@@ -505,16 +505,16 @@ tangent line.
 
 At the current guess $\alpha_k$, the tangent line to $f$ is:
 
-$\displaystyle y=f(\alpha_k)+f'(\alpha_k)(z-\alpha_k)$
+$y=f(\alpha_k)+f'(\alpha_k)(z-\alpha_k)$
 
 The next guess $\alpha_{k+1}$ is where this tangent line crosses the
 $z$-axis. Set $y=0$:
 
-$\displaystyle 0=f(\alpha_k)+f'(\alpha_k)(\alpha_{k+1}-\alpha_k)$
+$0=f(\alpha_k)+f'(\alpha_k)(\alpha_{k+1}-\alpha_k)$
 
 Solving for $\alpha_{k+1}$:
 
-$\displaystyle \alpha_{k+1} =\alpha_k-\frac{f(\alpha_k)}{f'(\alpha_k)}$
+$\alpha_{k+1} =\alpha_k-\frac{f(\alpha_k)}{f'(\alpha_k)}$
 
 </details>
 
@@ -586,22 +586,23 @@ $$
 
 For an ordinary annuity, payments occur at times:
 
-$\displaystyle 1,2,\ldots,n$
+$1,2,\ldots,n$
 
 So the present value is:
 
-$\displaystyle \operatorname{PV} =A\left[ \frac{1}{1+r} +\frac{1}{(1+r)^2} +\cdots +\frac{1}{(1+r)^n} \right]$
+$\mathrm{PV} =A[ \frac{1}{1+r} +\frac{1}{(1+r)^2} +\cdots +\frac{1}{(1+r)^n} ]$
 
 This is a finite geometric series with first term $\frac{1}{1+r}$ and
 common ratio $\frac{1}{1+r}$, so:
 
-$\displaystyle \operatorname{PV} =\frac{A}{r}\left[1-\frac{1}{(1+r)^n}\right]$
+$\mathrm{PV} =\frac{A}{r}[1-\frac{1}{(1+r)^n}]$
 
 For an annuity due, every payment occurs one period earlier than in an
 ordinary annuity. Therefore its present value is one period of
 accumulation larger:
 
-$\displaystyle \operatorname{PV}(\text{annuity due}) =(1+r)\operatorname{PV}(\text{ordinary annuity})$
+PV of an annuity due equals $(1+r)$ times the PV of the corresponding
+ordinary annuity.
 
 </details>
 
@@ -632,17 +633,17 @@ A perpetuity is an annuity with infinitely many payments.
 
 For end-of-period payments:
 
-$\displaystyle \operatorname{PV} =A\left[ \frac{1}{1+r} +\frac{1}{(1+r)^2} +\cdots \right]$
+$\mathrm{PV} =A[ \frac{1}{1+r} +\frac{1}{(1+r)^2} +\cdots ]$
 
 This is an infinite geometric series with first term $\frac{1}{1+r}$ and
 common ratio $\frac{1}{1+r}$, so:
 
-$\displaystyle \operatorname{PV}=\frac{A}{r}$
+$\mathrm{PV}=\frac{A}{r}$
 
 For beginning-of-period payments, the first payment occurs immediately at
 time $0$. This makes the value one period larger:
 
-$\displaystyle \operatorname{PV}=\frac{A(1+r)}{r}$
+$\mathrm{PV}=\frac{A(1+r)}{r}$
 
 </details>
 
@@ -673,16 +674,16 @@ $$
 At the start of the loan, the loan amount must equal the present value of
 all repayments:
 
-$\displaystyle L=\operatorname{PV}(C)$
+$L=\mathrm{PV}(C)$
 
 For equal end-of-period repayments, the repayment stream is an ordinary
 annuity. Therefore:
 
-$\displaystyle L=\frac{A}{r}\left[1-\frac{1}{(1+r)^n}\right]$
+$L=\frac{A}{r}[1-\frac{1}{(1+r)^n}]$
 
 Solving for $A$ gives:
 
-$\displaystyle A=\frac{Lr}{1-\frac{1}{(1+r)^n}}$
+$A=\frac{Lr}{1-\frac{1}{(1+r)^n}}$
 
 </details>
 
@@ -753,21 +754,21 @@ The prospective method looks forward from time $m$. Immediately after the
 $m$th payment, there are $n-m$ payments left. The balance is the present
 value at time $m$ of those remaining payments:
 
-$\displaystyle L_m^{\text{Bal}} =\frac{A}{r}\left[1-\frac{1}{(1+r)^{n-m}}\right]$
+$L_m^{\mathrm{Bal}} = \frac{A}{r}[1-\frac{1}{(1+r)^{n-m}}]$
 
 The retrospective method looks backward. Start with the original loan and
 accumulate it to time $m$:
 
-$\displaystyle L(1+r)^m$
+$L(1+r)^m$
 
 Then subtract the accumulated value at time $m$ of the $m$ payments
 already made:
 
-$\displaystyle A\frac{(1+r)^m-1}{r}$
+$A\frac{(1+r)^m-1}{r}$
 
 Therefore:
 
-$\displaystyle L_m^{\text{Bal}} =L(1+r)^m-\frac{A}{r}\left[(1+r)^m-1\right]$
+$L_m^{\mathrm{Bal}} = L(1+r)^m-\frac{A}{r}[(1+r)^m-1]$
 
 Both methods give the same result because they are just two different
 ways to value the same remaining loan obligation.

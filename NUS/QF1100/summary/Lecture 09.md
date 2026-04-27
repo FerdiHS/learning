@@ -159,7 +159,7 @@ The crucial difference between a forward and an option is obligation.
 
 That is why option payoffs use the positive-part operator:
 
-$\displaystyle x^+=\max(x,0).$
+$x^+=\max(x,0).$
 
 If exercising would create a loss, the holder simply does not exercise.
 
@@ -268,7 +268,7 @@ Profit also accounts for what you paid or received at time $0$.
 
 For a long call, for example:
 
-$\displaystyle \text{profit}=\text{call payoff}-\text{time-}T \text{ value of premium}.$
+profit = call payoff - time-$T$ value of premium.
 
 The short position always has the opposite payoff and opposite profit from
 the corresponding long position.
@@ -369,7 +369,7 @@ that can dominate it.
 
 For the call, if
 
-$\displaystyle C < S_0-DK,$
+$C < S_0-DK,$
 
 then one can:
 
@@ -383,7 +383,7 @@ investment is enough to leave positive profit.
 
 For the put, if
 
-$\displaystyle P < DK-S_0,$
+$P < DK-S_0,$
 
 then one can:
 
@@ -613,7 +613,7 @@ Consider two portfolios:
 
 Their present values are:
 
-$\displaystyle PV_A=C+DK,\qquad PV_B=P+S_0.$
+$PV_A=C+DK$ and $PV_B=P+S_0$.
 
 At maturity:
 
@@ -696,7 +696,7 @@ no-arbitrage equivalent valuation rule.
 
 The condition
 
-$\displaystyle u>R>d$
+$u>R>d$
 
 prevents trivial arbitrage between the stock and the risk-free asset.
 
@@ -707,12 +707,12 @@ stock instead of lending risk-free.
 
 The quantity
 
-$\displaystyle q=\frac{R-d}{u-d}$
+$q=\frac{R-d}{u-d}$
 
 is not the real probability of an up move. It is the pricing weight that
 makes the discounted expected stock price under $q$ match no-arbitrage:
 
-$\displaystyle S=\frac{1}{R}\bigl(quS+(1-q)dS\bigr).$
+$S=\frac{1}{R}(quS+(1-q)dS).$
 
 That is why the option price depends on $q$, not on the real-world
 probability $p$.
@@ -757,14 +757,14 @@ portfolio payoff matches the option payoff in both possible future states.
 
 Once:
 
-$\displaystyle ux+Rb=C_u, \qquad dx+Rb=C_d,$
+$ux+Rb=C_u$ and $dx+Rb=C_d$,
 
 the portfolio and the option are indistinguishable at maturity.
 By no-arbitrage, they must have the same current price.
 
 Solving the two linear equations gives:
 
-$\displaystyle x=\frac{C_u-C_d}{u-d},\qquad b=\frac{uC_d-dC_u}{R(u-d)}.$
+$x=\frac{C_u-C_d}{u-d}$ and $b=\frac{uC_d-dC_u}{R(u-d)}.$
 
 This is the core replication idea behind derivative pricing.
 </details>
@@ -842,7 +842,7 @@ $\sigma$.
 
 The relation
 
-$\displaystyle d=\frac{1}{u}$
+$d=\frac{1}{u}$
 
 makes the up and down moves multiplicatively symmetric, which is why an
 up move followed by a down move returns to the same node.

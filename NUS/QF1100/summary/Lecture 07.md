@@ -162,16 +162,16 @@ happens later at time $T$.
 Under the lecture's assumption, the contract costs nothing to enter at
 time $t$. So:
 
-$\displaystyle \text{profit} = \text{payoff} - \text{initial cost} = \text{payoff}.$
+profit = payoff - initial cost = payoff.
 
 If you are long, you agree to buy at price $F(t,T)$. At maturity, the
 asset is worth $S_T$ in the market, so your net gain is:
 
-$\displaystyle S_T-F(t,T)$
+$S_T-F(t,T)$
 
 If you are short, you agree to sell at price $F(t,T)$, so your gain is:
 
-$\displaystyle F(t,T)-S_T$
+$F(t,T)-S_T$
 
 This also explains the sign:
 
@@ -272,16 +272,16 @@ strategies:
 If you buy the asset now using borrowed money at risk-free rate $r$, then
 the time-$T$ cost of that strategy is:
 
-$\displaystyle S_0 e^{rT}$
+$S_0 e^{rT}$
 
 No arbitrage says the forward delivery price must match that carrying
 cost, so:
 
-$\displaystyle F(0,T)=S_0e^{rT}$
+$F(0,T)=S_0e^{rT}$
 
 The same logic at a later time $t$ gives:
 
-$\displaystyle F(t,T)=S_t e^{r(T-t)}.$
+$F(t,T)=S_t e^{r(T-t)}.$
 
 Another way to see this is by arbitrage bounds:
 
@@ -444,12 +444,12 @@ For a long position:
 
 That is why the daily cash flow is:
 
-$\displaystyle F(i)-F(i-1)$
+$F(i)-F(i-1)$
 
 At maturity, the futures contract becomes a contract for immediate
 delivery, so the futures price must equal the spot price:
 
-$\displaystyle F(N)=F(T)=S(T)$
+$F(N)=F(T)=S(T)$
 
 If they differed, an investor could lock in an arbitrage by combining a
 futures position with immediate spot-market trading.
@@ -522,18 +522,18 @@ paid early has financing consequences too.
 That is why accrued profit is not just the sum of daily cash flows, but
 the accumulated value of those cash flows at time $T$:
 
-$\displaystyle A_T^{\text{long}}=\sum_{i=1}^{N}[F(i)-F(i-1)]R^{N-i}$
+$A_T^{\mathrm{long}}=\sum_{i=1}^{N}[F(i)-F(i-1)]R^{N-i}$
 
 The factor $R^{N-i}$ means the cash flow received on day $i$ is carried
 forward for the remaining $N-i$ days until maturity.
 
 If $r=0$, then $R=1$, so the expression simplifies to a telescoping sum:
 
-$\displaystyle [F(N)-F(N-1)] + \cdots + [F(1)-F(0)] = F(N)-F(0).$
+$[F(N)-F(N-1)] + \cdots + [F(1)-F(0)] = F(N)-F(0).$
 
 Since $F(N)=S(T)$, the total futures profit becomes:
 
-$\displaystyle A_T^{\text{long}}=S(T)-F(0),$
+$A_T^{\mathrm{long}}=S(T)-F(0),$
 
 which is exactly the long forward profit. This is the first hint of
 forward-futures equivalence.
@@ -582,7 +582,7 @@ at better rates.
 But under the lecture's simplifying assumptions, the reinvestment effect
 does not distort prices, so the two delivery prices coincide:
 
-$\displaystyle F_{\text{forward}}(t,T)=F_{\text{future}}(t,T)=F(t,T).$
+$F_{\mathrm{forward}}(t,T)=F_{\mathrm{future}}(t,T)=F(t,T).$
 
 So for this course, forwards and futures can be priced using the same
 no-arbitrage formula.

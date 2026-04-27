@@ -158,17 +158,17 @@ The coupon rate $c$ is quoted annually, but coupons are paid only $m$
 times per year, so each coupon is the annual coupon amount $cF$ split
 across $m$ payments:
 
-$\displaystyle \frac{cF}{m}$
+$\frac{cF}{m}$
 
 If the bond lasts $N$ years and pays $m$ times per year, then there are
 $Nm$ payment dates, which gives:
 
-$\displaystyle n=Nm$
+$n=Nm$
 
 The nominal yield $\lambda$ is also quoted annually, so the matching
 per-period discount rate is:
 
-$\displaystyle \frac{\lambda}{m}$
+$\frac{\lambda}{m}$
 
 This is why coupon bonds are naturally priced period by period: both the
 coupon cash flows and the discounting are expressed on the same payment
@@ -233,7 +233,7 @@ $$
 
 Bond pricing is just present value:
 
-$\displaystyle \text{price} = \text{PV of coupons} + \text{PV of redemption value}$
+Price = PV of coupons + PV of redemption value.
 
 Each coupon equals $\frac{cF}{m}$ and arrives one period apart, so we
 discount the $i$th coupon by $(1+\lambda/m)^i$. The redemption value is
@@ -246,11 +246,11 @@ rate $c$ may differ from the yield $\lambda$.
 
 More explicitly, the coupon leg is:
 
-$\displaystyle \sum_{i=1}^{n}\frac{cF/m}{(1+\lambda/m)^i} = \frac{cF}{m}a_{\overline{n}|\,\lambda/m}$
+$\sum_{i=1}^{n}\frac{cF/m}{(1+\lambda/m)^i} = \frac{cF}{m}a_{\overline{n}|\,\lambda/m}$
 
 and the redemption leg is:
 
-$\displaystyle \frac{R}{(1+\lambda/m)^n}$
+$\frac{R}{(1+\lambda/m)^n}$
 
 so the full price is just the sum of those two pieces.
 
@@ -287,19 +287,19 @@ makes the roles of redemption and coupons easier to separate.
 
 Starting from
 
-$\displaystyle P = F\left[ \frac{1}{(1+\lambda/m)^n} + \frac{c}{\lambda} \left(1-\frac{1}{(1+\lambda/m)^n}\right) \right],$
+$P = F[ \frac{1}{(1+\lambda/m)^n} + \frac{c}{\lambda} (1-\frac{1}{(1+\lambda/m)^n}) ],$
 
 define
 
-$\displaystyle K=\frac{F}{(1+\lambda/m)^n}.$
+$K=\frac{F}{(1+\lambda/m)^n}.$
 
 Then
 
-$\displaystyle F-K = F\left(1-\frac{1}{(1+\lambda/m)^n}\right),$
+$F-K = F(1-\frac{1}{(1+\lambda/m)^n}),$
 
 so the formula becomes
 
-$\displaystyle P = K + \frac{c}{\lambda}(F-K).$
+$P = K + \frac{c}{\lambda}(F-K).$
 
 </details>
 
@@ -347,7 +347,8 @@ coupons and the final redemption payment.
 
 The recursive formula says:
 
-$\displaystyle \text{next ex-coupon price} = \text{current ex-coupon price grown one period} - \text{coupon just paid}$
+next ex-coupon price = current ex-coupon price grown one period - coupon
+just paid.
 
 So the bond first earns one period of yield, then loses value when the
 next coupon is detached and paid to the bondholder.
@@ -400,21 +401,21 @@ If the coupon rate $c$ is higher than the yield $\lambda$, the bond pays
 relatively attractive coupons, so investors are willing to pay more than
 par:
 
-$\displaystyle P>F$
+$P>F$
 
 If the coupon rate exactly matches the yield, the bond is fairly priced at
 par:
 
-$\displaystyle P=F$
+$P=F$
 
 If the coupon rate is below the yield, the coupons are unattractive
 relative to the market, so the price must fall below par:
 
-$\displaystyle P<F$
+$P<F$
 
 This also follows directly from the equivalent form
 
-$\displaystyle P = F + F\left(\frac{c-\lambda}{\lambda}\right) \left[ 1-\frac{1}{(1+\lambda/m)^n} \right].$
+$P = F + F(\frac{c-\lambda}{\lambda}) [ 1-\frac{1}{(1+\lambda/m)^n} ].$
 
 The bracketed term is positive, so the sign of $P-F$ is determined by the
 sign of $c-\lambda$.
@@ -449,7 +450,7 @@ payment.
 A zero coupon bond has only one future cash flow, so its price is just the
 present value of that single payment:
 
-$\displaystyle P=\text{PV of }R$
+$P$ is the present value of $R$.
 
 There are no interim coupons, so the entire return comes from buying the
 bond now and receiving the redemption value at maturity.
@@ -486,11 +487,12 @@ A perpetual bond is just a perpetuity. The payment each period is
 $\frac{cF}{m}$ and the discount rate per period is $\frac{\lambda}{m}$,
 so the perpetuity formula gives:
 
-$\displaystyle \frac{\text{payment}}{\text{rate}} = \frac{cF/m}{\lambda/m}$
+So the perpetuity rule "payment divided by rate" becomes
+$P = \frac{cF/m}{\lambda/m}$.
 
 The $m$ cancels, leaving:
 
-$\displaystyle P=\frac{cF}{\lambda}$
+$P=\frac{cF}{\lambda}$
 
 Intuitively, the price is large when the coupon stream is large and small
 when the market yield is high, exactly like any perpetuity.
@@ -561,7 +563,7 @@ is weighted by how important that cash flow is in present-value terms.
 
 Since the weights $w_i$ are present-value proportions, they satisfy:
 
-$\displaystyle w_i \ge 0, \qquad \sum_{i=1}^q w_i = 1$
+$w_i \ge 0$ and $\sum_{i=1}^q w_i = 1$
 
 So duration is a weighted average of payment times, which explains why it
 must lie between the earliest and latest payment times when all cash flows
@@ -570,7 +572,7 @@ are non-negative.
 For a zero coupon bond, there is only one cash flow at maturity, so all
 the weight is on that one date and:
 
-$\displaystyle D=T$
+$D=T$
 
 The connection with interest-rate sensitivity is intuitive: if more of the
 bond's value comes from cash flows far in the future, then changes in
@@ -682,9 +684,9 @@ duration.
 When the bond is priced at par, the formula simplifies because the coupon
 rate and the yield match.
 
-The factor $\frac{1}{P}$ appears because the weights must add to $1$:
-
-$\displaystyle w_i = \frac{\text{PV of cash flow }i}{\text{total bond price}}.$
+The factor $\frac{1}{P}$ appears because the weights must add to $1$.
+Equivalently, $w_i$ is the present value of cash flow $i$ divided by the
+total bond price $P$.
 
 So bond duration is not a new concept; it is the same weighted-average
 idea as Macaulay duration, specialized to coupon-bond cash flows.

@@ -92,15 +92,15 @@ after time $t$.
 
 So if one unit becomes $a(t)$, then $P$ units become:
 
-$\displaystyle P \times a(t)$
+$P \times a(t)$
 
 Hence:
 
-$\displaystyle A(t) = Pa(t)$
+$A(t) = Pa(t)$
 
 Also, at time $0$, no time has passed, so one unit is still one unit:
 
-$\displaystyle a(0)=1$
+$a(0)=1$
 
 </details>
 
@@ -121,19 +121,19 @@ Under simple interest, interest does not earn further interest.
 
 After $t$ years, the interest earned on principal $P$ is:
 
-$\displaystyle Prt$
+$Prt$
 
 So the accumulated amount is:
 
-$\displaystyle A(t) = P + Prt = P(1+rt)$
+$A(t) = P + Prt = P(1+rt)$
 
 Since:
 
-$\displaystyle A(t)=Pa(t)$
+$A(t)=Pa(t)$
 
 we get:
 
-$\displaystyle a(t)=1+rt$
+$a(t)=1+rt$
 
 Simple interest grows linearly because the interest is always based only
 on the original principal.
@@ -155,19 +155,19 @@ Unless stated otherwise, QF1100 assumes compound interest.
 
 Under compound interest, each period multiplies the current amount by:
 
-$\displaystyle 1+r$
+$1+r$
 
 After one period:
 
-$\displaystyle a(1)=1+r$
+$a(1)=1+r$
 
 After two periods:
 
-$\displaystyle a(2)=(1+r)(1+r)=(1+r)^2$
+$a(2)=(1+r)(1+r)=(1+r)^2$
 
 After $t$ years, when $r$ is the effective annual rate:
 
-$\displaystyle a(t)=(1+r)^t$
+$a(t)=(1+r)^t$
 
 For positive $r$, compound interest matches simple interest at $t=1$ and
 exceeds it for $t>1$ because interest is added back into the balance and
@@ -209,19 +209,19 @@ periods in a year.
 
 So the interest rate per compounding period is:
 
-$\displaystyle \frac{r^{(p)}}{p}$
+$\frac{r^{(p)}}{p}$
 
 Each compounding period multiplies money by:
 
-$\displaystyle 1+\frac{r^{(p)}}{p}$
+$1+\frac{r^{(p)}}{p}$
 
 There are $p$ compounding periods in one year, so:
 
-$\displaystyle a(1)=\left(1+\frac{r^{(p)}}{p}\right)^p$
+$a(1)=(1+\frac{r^{(p)}}{p})^p$
 
 There are $pt$ compounding periods in $t$ years, so:
 
-$\displaystyle a(t)=\left(1+\frac{r^{(p)}}{p}\right)^{pt}$
+$a(t)=(1+\frac{r^{(p)}}{p})^{pt}$
 
 </details>
 
@@ -255,34 +255,34 @@ one-year growth?
 For a nominal rate compounded $p$ times per year, one-year accumulation
 is:
 
-$\displaystyle \left(1+\frac{r^{(p)}}{p}\right)^p$
+$(1+\frac{r^{(p)}}{p})^p$
 
 For an effective annual rate, one-year accumulation is:
 
-$\displaystyle 1+r_e$
+$1+r_e$
 
 Equating the two gives:
 
-$\displaystyle 1+r_e=\left(1+\frac{r^{(p)}}{p}\right)^p$
+$1+r_e=(1+\frac{r^{(p)}}{p})^p$
 
 For $r^{(p)} \ge 0$, the inequality $r_e \ge r^{(p)}$ comes from the fact
 that compounding adds interest on interest.
 
 Algebraically, let:
 
-$\displaystyle x=\frac{r^{(p)}}{p}$
+$x=\frac{r^{(p)}}{p}$
 
 Then:
 
-$\displaystyle (1+x)^p \ge 1+px$
+$(1+x)^p \ge 1+px$
 
 So:
 
-$\displaystyle \left(1+\frac{r^{(p)}}{p}\right)^p \ge 1+r^{(p)}$
+$(1+\frac{r^{(p)}}{p})^p \ge 1+r^{(p)}$
 
 Subtracting $1$ gives:
 
-$\displaystyle r_e \ge r^{(p)}$
+$r_e \ge r^{(p)}$
 
 </details>
 
@@ -306,11 +306,11 @@ Equivalent rates must make the same amount of money after one year.
 
 The nominal rate $r^{(p)}$ compounded $p$ times per year gives:
 
-$\displaystyle \left(1+\frac{r^{(p)}}{p}\right)^p$
+$(1+\frac{r^{(p)}}{p})^p$
 
 The nominal rate $R^{(q)}$ compounded $q$ times per year gives:
 
-$\displaystyle \left(1+\frac{R^{(q)}}{q}\right)^q$
+$(1+\frac{R^{(q)}}{q})^q$
 
 If these two one-year accumulation factors are equal, then both rates are
 financially equivalent over one year.
@@ -347,16 +347,16 @@ frequently.
 
 With $x$ compounding periods per year, the one-year accumulation is:
 
-$\displaystyle \left(1+\frac{r}{x}\right)^x$
+$(1+\frac{r}{x})^x$
 
 As $x$ becomes infinitely large, the compounding periods become
 infinitesimally small. The limit is:
 
-$\displaystyle e^r$
+$e^r$
 
 For $t$ years, the same logic gives:
 
-$\displaystyle a(t)=e^{rt}$
+$a(t)=e^{rt}$
 
 This is why continuous compounding and a constant force of interest use
 the same exponential form.
@@ -389,31 +389,31 @@ accumulation function is changing.
 
 Dividing by $a(t)$ turns this into a relative growth rate:
 
-$\displaystyle \frac{a'(t)}{a(t)}$
+$\frac{a'(t)}{a(t)}$
 
 That relative growth rate is the force of interest:
 
-$\displaystyle \delta(t)=\frac{a'(t)}{a(t)}$
+$\delta(t)=\frac{a'(t)}{a(t)}$
 
 Also:
 
-$\displaystyle \frac{d}{dt}\ln a(t)=\frac{a'(t)}{a(t)}$
+$\frac{d}{dt}\ln a(t)=\frac{a'(t)}{a(t)}$
 
 If the force is constant, then:
 
-$\displaystyle \frac{d}{dt}\ln a(t)=\delta$
+$\frac{d}{dt}\ln a(t)=\delta$
 
 Integrating from $0$ to $t$ gives:
 
-$\displaystyle \ln a(t)-\ln a(0)=\delta t$
+$\ln a(t)-\ln a(0)=\delta t$
 
 Since $a(0)=1$, we have $\ln a(0)=0$, so:
 
-$\displaystyle \ln a(t)=\delta t$
+$\ln a(t)=\delta t$
 
 Therefore:
 
-$\displaystyle a(t)=e^{\delta t}$
+$a(t)=e^{\delta t}$
 
 </details>
 
@@ -437,28 +437,28 @@ $$
 
 From the definition of force of interest:
 
-$\displaystyle \delta(t)=\frac{d}{dt}\ln a(t)$
+$\delta(t)=\frac{d}{dt}\ln a(t)$
 
 Integrate both sides from $0$ to $t$:
 
-$\displaystyle \int_0^t \delta(u)\,du = \ln a(t)-\ln a(0)$
+$\int_0^t \delta(u)\,du = \ln a(t)-\ln a(0)$
 
 Since $a(0)=1$, $\ln a(0)=0$, so:
 
-$\displaystyle \ln a(t)=\int_0^t \delta(u)\,du$
+$\ln a(t)=\int_0^t \delta(u)\,du$
 
 Exponentiating both sides gives:
 
-$\displaystyle a(t)=\exp\left(\int_0^t \delta(u)\,du\right)$
+$a(t)=\exp(\int_0^t \delta(u)\,du)$
 
 For accumulation from $s$ to $t$, divide the total accumulation to time
 $t$ by the total accumulation to time $s$:
 
-$\displaystyle a(s,t)=\frac{a(t)}{a(s)}$
+$a(s,t)=\frac{a(t)}{a(s)}$
 
 Using the force-of-interest formula:
 
-$\displaystyle \frac{a(t)}{a(s)} = \frac{ \exp\left(\int_0^t \delta(u)\,du\right) }{ \exp\left(\int_0^s \delta(u)\,du\right) } = \exp\left(\int_s^t \delta(u)\,du\right)$
+$\frac{a(t)}{a(s)} = \frac{ \exp(\int_0^t \delta(u)\,du) }{ \exp(\int_0^s \delta(u)\,du) } = \exp(\int_s^t \delta(u)\,du)$
 
 </details>
 
@@ -479,15 +479,15 @@ smaller consecutive steps.
 
 Using:
 
-$\displaystyle a(s,t)=\frac{a(t)}{a(s)}$
+$a(s,t)=\frac{a(t)}{a(s)}$
 
 we get:
 
-$\displaystyle a(t_0,t_1)a(t_1,t_2)\cdots a(t_{n-1},t_n) = \frac{a(t_1)}{a(t_0)} \frac{a(t_2)}{a(t_1)} \cdots \frac{a(t_n)}{a(t_{n-1})}$
+$a(t_0,t_1)a(t_1,t_2)\cdots a(t_{n-1},t_n) = \frac{a(t_1)}{a(t_0)} \frac{a(t_2)}{a(t_1)} \cdots \frac{a(t_n)}{a(t_{n-1})}$
 
 All middle terms cancel, leaving:
 
-$\displaystyle \frac{a(t_n)}{a(t_0)} =a(t_0,t_n)$
+$\frac{a(t_n)}{a(t_0)} =a(t_0,t_n)$
 
 So the consistency principle is just the idea that growth over a long
 interval can be split into consecutive shorter intervals.

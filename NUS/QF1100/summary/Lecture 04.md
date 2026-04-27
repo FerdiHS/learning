@@ -136,12 +136,12 @@ The spot rate $s_t$ is the annualized rate implied for maturity $t$.
 If one unit of money grows for $t$ years at the spot rate for maturity
 $t$, then under yearly compounding it becomes:
 
-$\displaystyle (1+s_t)^t$
+$(1+s_t)^t$
 
 So if a future payment $C_t$ is due at time $t$, the amount today that
 grows to that payment must be:
 
-$\displaystyle \frac{C_t}{(1+s_t)^t}$
+$\frac{C_t}{(1+s_t)^t}$
 
 This is why spot rates are fundamental: each maturity has its own
 discount rate, rather than forcing all cash flows to use one constant
@@ -179,16 +179,16 @@ rate because it has only one cash flow.
 
 Its price must equal the present value of the redemption payment:
 
-$\displaystyle P=\frac{R}{(1+s_n)^n}$
+$P=\frac{R}{(1+s_n)^n}$
 
 Since $P$ and $R$ are known from the bond, the only unknown is $s_n$.
 Rearranging gives:
 
-$\displaystyle (1+s_n)^n = \frac{R}{P}$
+$(1+s_n)^n = \frac{R}{P}$
 
 and then:
 
-$\displaystyle s_n = \left(\frac{R}{P}\right)^{1/n}-1$
+$s_n = (\frac{R}{P})^{1/n}-1$
 
 This is why zero coupon bonds "isolate" spot rates directly.
 
@@ -230,7 +230,7 @@ So:
 
 The convention
 
-$\displaystyle f_{0,t}=s_t$
+$f_{0,t}=s_t$
 
 simply says a spot rate is a special case of a forward rate whose starting
 date is today.
@@ -293,22 +293,22 @@ To reach time $k$, you can:
 
 Strategy 1 gives:
 
-$\displaystyle (1+s_k)^k$
+$(1+s_k)^k$
 
 Strategy 2 gives:
 
-$\displaystyle (1+s_j)^j(1+f_{j,k})^{k-j}$
+$(1+s_j)^j(1+f_{j,k})^{k-j}$
 
 No arbitrage forces these to be equal, which gives the forward-rate
 formula after rearranging.
 
 To solve explicitly:
 
-$\displaystyle (1+f_{j,k})^{k-j} = \frac{(1+s_k)^k}{(1+s_j)^j}$
+$(1+f_{j,k})^{k-j} = \frac{(1+s_k)^k}{(1+s_j)^j}$
 
 so:
 
-$\displaystyle 1+f_{j,k} = \left[ \frac{(1+s_k)^k}{(1+s_j)^j} \right]^{1/(k-j)}$
+$1+f_{j,k} = [ \frac{(1+s_k)^k}{(1+s_j)^j} ]^{1/(k-j)}$
 
 and subtracting $1$ gives the forward-rate formula.
 
@@ -340,7 +340,7 @@ spot rate for that maturity.
 The payment at time $1$ is discounted by $s_1$, the payment at time $2$
 is discounted by $s_2$, and so on:
 
-$\displaystyle \frac{C_1}{1+s_1},\quad \frac{C_2}{(1+s_2)^2},\quad \ldots,\quad \frac{C_n}{(1+s_n)^n}$
+$\frac{C_1}{1+s_1},\quad \frac{C_2}{(1+s_2)^2},\quad \ldots,\quad \frac{C_n}{(1+s_n)^n}$
 
 Then the total price is the sum of these present values.
 
@@ -424,7 +424,7 @@ earlier coupon cash flows of a later bond can already be priced.
 In the $n$-period bond formula, all terms except the last one involve
 spot rates that were solved earlier:
 
-$\displaystyle s_1,s_2,\ldots,s_{n-1}$
+$s_1,s_2,\ldots,s_{n-1}$
 
 So after subtracting the present value of the earlier coupon payments from
 the bond price, the remaining unknown part is the final term involving
@@ -436,7 +436,7 @@ $s_2$, then $s_3$, and so on.
 More explicitly, once the earlier terms are moved to the left-hand side,
 we get:
 
-$\displaystyle P_n - \frac{cF/m}{1+s_1} - \frac{cF/m}{(1+s_2)^2} - \cdots - \frac{cF/m}{(1+s_{n-1})^{n-1}} = \frac{cF/m+R}{(1+s_n)^n}$
+$P_n - \frac{cF/m}{1+s_1} - \frac{cF/m}{(1+s_2)^2} - \cdots - \frac{cF/m}{(1+s_{n-1})^{n-1}} = \frac{cF/m+R}{(1+s_n)^n}$
 
 and now the only unknown in the equation is $s_n$.
 
