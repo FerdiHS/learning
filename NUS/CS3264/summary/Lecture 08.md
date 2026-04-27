@@ -11,11 +11,7 @@
     - The same kernel is applied across the whole image.
     - Learned feature detectors apply everywhere (edges, corners, etc.).
 - Translation equivariance
-    - If $g$ is a translation operation, then:
-        
-        $$
-        f(g(x)) = g(f(x))
-        $$
+    - If $g$ is a translation operation, then $f(g(x)) = g(f(x))$.
         
 
 ### Stages
@@ -35,29 +31,14 @@
 
 ### Steps
 
-1. Compute Positional Embeddings
-    
-    $$
-    E = \begin{bmatrix} e_1^\top \\ e_2^\top \\ \vdots \\ e_T^\top \end{bmatrix}
-    $$
-    
-2. Compute Query, Key, and Value Matrices
-    - Query: $E \times W_Q = Q$
-    - Key: $E \times W_K = K$
-    - Value: $E \times W_V = V$
-3. Compute Attention Weights
-    
-    $$
-    S = \text{softmax} \big(\frac{QK^\top}{\sqrt{d_k}}\big)
-    $$
+1. Compute positional embeddings: $E = [e_1^\top; e_2^\top; \dots; e_T^\top]$.
 
-    where $d_k$ is the dimensionality of the key/query vectors.
-    
-4. Extract Features based on Attention
-    
-    $$
-    O = S \times V
-    $$
+2. Compute Query, Key, and Value Matrices
+    - Query: $Q = E W_Q$
+    - Key: $K = E W_K$
+    - Value: $V = E W_V$
+3. Compute attention weights: $S = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)$, where $d_k$ is the dimensionality of the key/query vectors.
+4. Extract features based on attention: $O = S V$.
     
 
 ---
