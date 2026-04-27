@@ -47,7 +47,7 @@ $$
 - **Model**:
     - **Joint distribution**: $p(t, x \mid \theta) = p(x \mid t, \theta) p(t \mid \theta)$
     - **Class Conditional Distribution**: $p(x \mid t, \theta) = \prod_{m=1}^{M} \mathcal{N}(x^m \mid \mu_t^m, v_t^m)$
-    - **Class Prior**: $p(t\mid \theta) = \operatorname{Bern}(t \mid \pi)$
+    - **Class Prior**: $p(t\mid \theta) = \mathrm{Bern}(t \mid \pi)$
 - **Loss**:
     - **MLE**:
     $\mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left[t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right]$

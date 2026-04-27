@@ -110,7 +110,7 @@ A fixed Gaussian $q_\psi(z_n) = \mathcal{N}(z_n; \mu, \Sigma)$ is not expressive
 Instead, make the variational distribution depend on the input:
 
 $$
-q_\psi(z_n \mid x_n) = \mathcal{N}(z_n \mid g^\mu_\psi(x_n), \operatorname{diag}(g^\sigma_\psi(x_n)^2))
+q_\psi(z_n \mid x_n) = \mathcal{N}(z_n \mid g^\mu_\psi(x_n), \mathrm{diag}(g^\sigma_\psi(x_n)^2))
 $$
 
 - $g_\psi(\cdot)$ is the **encoder** network
@@ -145,7 +145,7 @@ $$
 
 $$
 D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
-= D_{KL}\left[\mathcal{N}(z_n \mid g^\mu_\psi(x_n), \operatorname{diag}(g^\sigma_\psi(x_n)^2)) \,\|\, \mathcal{N}(z_n \mid 0, I)\right]
+= D_{KL}\left[\mathcal{N}(z_n \mid g^\mu_\psi(x_n), \mathrm{diag}(g^\sigma_\psi(x_n)^2)) \,\|\, \mathcal{N}(z_n \mid 0, I)\right]
 $$
 
 - For Gaussian distributions, this KL term can often be computed in closed form
@@ -180,7 +180,7 @@ $$
 Optimize the negative ELBO with SGD:
 
 $$
-\operatorname*{arg\,min}_{\psi, \theta} -L(\psi, \theta)
+\mathrm{arg\,min}_{\psi, \theta}\, -L(\psi, \theta)
 $$
 
 - Encoder: $q_\psi(z \mid x)$

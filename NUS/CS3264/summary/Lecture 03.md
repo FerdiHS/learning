@@ -18,7 +18,7 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
 
 - **Data**: $D = \{(x_n, t_n)\}_{n=1}^{N}$
 - **Targets**: $t_n \in \{-1, +1\}$
-- **Model**: $y(x)=\operatorname{sign}(w^\top x)$.
+- **Model**: $y(x)=\mathrm{sign}(w^\top x)$.
 
 ---
 
@@ -30,7 +30,7 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
     - **Prediction**: $y(x) = \sigma(w^{\top} \phi(x))$
     - **Sigmoid**: $\displaystyle \sigma(z)=\frac{1}{1+e^{-z}}$, with
     $\sigma(-z)=1-\sigma(z)$ and $\frac{d\sigma}{dz}=\sigma(z)\big(1-\sigma(z)\big)$.
-    - **Likelihood**: $p(\mathbf{t} \mid X, w) = \prod_{n=1}^{N} \operatorname{Bern}(t_n \mid y(x_n))$
+    - **Likelihood**: $p(\mathbf{t} \mid X, w) = \prod_{n=1}^{N} \mathrm{Bern}(t_n \mid y(x_n))$
     - **Prior**: $p(w)=\mathcal{N}(w\mid0,\alpha^{-1}I)$
 - **Loss**:
     - **MLE**:
@@ -44,22 +44,22 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
     
     **MLE**:
     
-    $\operatorname*{arg\,max}_w p(\mathbf{t} \mid X, w) = \operatorname*{arg\,max}_w \prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}$
+    $\mathrm{arg\,max}_w\, p(\mathbf{t} \mid X, w) = \mathrm{arg\,max}_w\, \prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}$
     
-    $\operatorname*{arg\,max}_w \log p(\mathbf{t} \mid X, w) = \operatorname*{arg\,max}_w \sum_{n=1}^{N} \left[t_n \log y_n + (1 - t_n) \log(1-y_n)\right]$
+    $\mathrm{arg\,max}_w\, \log p(\mathbf{t} \mid X, w) = \mathrm{arg\,max}_w\, \sum_{n=1}^{N} \left[t_n \log y_n + (1 - t_n) \log(1-y_n)\right]$
     
     Therefore, $\mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left[t_n \log y_n + (1 - t_n) \log(1-y_n)\right]$
     
     **MAP**:
     
-    $\operatorname*{arg\,max}_w p(w \mid X, \mathbf{t}) \propto \operatorname*{arg\,max}_w p(\mathbf{t} \mid X, w) p(w)$
+    $\mathrm{arg\,max}_w\, p(w \mid X, \mathbf{t}) \propto \mathrm{arg\,max}_w\, p(\mathbf{t} \mid X, w) p(w)$
     
     $$
         \begin{align*}
-        \operatorname*{arg\,max}_w \log p(w \mid X, \mathbf{t})
-        &\propto \operatorname*{arg\,max}_w \left[- \mathcal{L}_{\text{MLE}}(w) + \log p(w)\right]
+        \mathrm{arg\,max}_w\, \log p(w \mid X, \mathbf{t})
+        &\propto \mathrm{arg\,max}_w\, \left[- \mathcal{L}_{\text{MLE}}(w) + \log p(w)\right]
         \newline
-        &=\operatorname*{arg\,max}_w \left[- \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}\right]
+        &=\mathrm{arg\,max}_w\, \left[- \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}\right]
         \end{align*}
     $$
     

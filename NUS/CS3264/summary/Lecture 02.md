@@ -220,7 +220,7 @@ Prior: uniform over these four values.
 ## **Frequentist (MLE)**
 
 We maximize the likelihood:
-$\theta_{\text{MLE}} = \operatorname*{arg\,max}_\theta p(D \mid \theta) = \operatorname*{arg\,max}_\theta \theta^3$.
+$\theta_{\text{MLE}} = \mathrm{arg\,max}_\theta\, p(D \mid \theta) = \mathrm{arg\,max}_\theta\, \theta^3$.
 
 - For $\theta=0$: $p(D\mid\theta)=0$
 - For $\theta=0.2$: $0.2^3=0.008$
@@ -265,7 +265,7 @@ $p(\text{H}\mid D) = \sum_\theta \theta \, p(\theta\mid D)= 0.2(0.005) + 0.8(0.3
 
 ## **MAP Estimate**
 
-$\theta_{\text{MAP}} = \operatorname*{arg\,max}_\theta p(\theta\mid D) = 1.0$,
+$\theta_{\text{MAP}} = \mathrm{arg\,max}_\theta\, p(\theta\mid D) = 1.0$,
 so $p(\text{H}\mid D) \approx 1.0$.
 
 This is like Bayesian but without averaging (just picks the most probable parameter).

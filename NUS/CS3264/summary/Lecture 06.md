@@ -12,7 +12,7 @@
 
 - Dataset:
     
-    $\mathcal{D} = \{t_n\}_{n=1}^N$ where $t_n \sim \operatorname{Bern}(\mu)$
+    $\mathcal{D} = \{t_n\}_{n=1}^N$ where $t_n \sim \mathrm{Bern}(\mu)$
     
 - Estimate Sample Average:
     
