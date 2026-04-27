@@ -86,26 +86,21 @@ $$
 
 - **Constant** learning rate $\alpha$
 - $\mathcal{L}(w)$ is **twice continuously differentiable**
-
-Taylor's Theorem: there exists some $\xi \in \mathbb{R}^d$ such that
-
-$$
-\mathcal{L}(v) = \mathcal{L}(w) + \nabla \mathcal{L}(w)^\top(v-w) + \frac{1}{2}(v-w)^\top \nabla^2 \mathcal{L}(\xi)(v-w)
-$$
-
+    - Taylor's Theorem: there exists some $\xi \in \mathbb{R}^d$ such that
+        
+        $$
+        \mathcal{L}(v) = \mathcal{L}(w) + \nabla \mathcal{L}(w)^\top(v-w) + \frac{1}{2}(v-w)^\top \nabla^2 \mathcal{L}(\xi)(v-w)
+        $$
+        
 - $\mathcal{L}(w)$ is ***L*-smooth**
-
-This means
-
-$$
-\| \nabla_w \mathcal{L}(w) - \nabla_v \mathcal{L}(v)\| \le L \|w - v\|
-$$
-
-and equivalently
-
-$$
-|u^\top \nabla^2\mathcal{L}(w)u| \le L\|u\|^2
-$$
+    
+    $$
+    \| \nabla_w \mathcal{L}(w) - \nabla_v \mathcal{L}(v)\| \le L \|w - v\|
+    $$
+    
+    $$
+    |u^\top \nabla^2\mathcal{L}(w)u| \le L\|u\|^2
+    $$
     
 
 ---

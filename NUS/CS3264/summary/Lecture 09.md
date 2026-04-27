@@ -19,7 +19,7 @@
     
 - Loss:
     
-    $\mathcal{L}(a) = \frac{1}{2}a^\top K^2 a - a^\top K t + \frac{1}{2} t^\top t + \frac{\lambda}{2} a^\top K a$ with $K = \Phi\Phi^\top \in \mathbb{R}^{N \times N}$
+    $\mathcal{L}(a) = \frac{1}{2}a^\top K K a - a^\top K t + \frac{1}{2} t^\top t + \frac{\lambda}{2} a^\top K a$ with $K = \Phi\Phi^\top \in \mathbb{R}^{N \times N}$
     
 - Solution:
     
@@ -27,7 +27,7 @@
     
 - Prediction:
     
-    $y(x_*) = \sum_{n=1}^{N} a_n \phi(x_n)^\top \phi(x_*) = a_\text{MAP}^\top k(x_*)$, where $k(x_*) = [k(x_1, x_*), \dots, k(x_N, x_*)]^\top \in \mathbb{R}^N$
+    $y(x_*) = \sum_{n=1}^{N} a_n \phi(x_n)^\top \phi(x_*) = a_\text{MAP}^\top k(x_*)$ where $k(x_*) = \begin{bmatrix} k(x_1, x_*) \\ \vdots \\ k(x_N, x_*)\end{bmatrix} \in \mathbb{R}^N$
     
 
 ---

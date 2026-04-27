@@ -46,15 +46,25 @@ $$
 
 ## Binary Classification Setting
 
-**Data.** $\mathcal{D} = \{(x_n, t_n)\}_{n=1}^N$ where $(x, t) \sim p(x, t)$.
-
-**Model.** $y \in \mathcal{H}$, assuming $\mathcal{H}$ is finite with size $M_\mathcal{H}$.
-
-**Loss.** $l(x, t, y)=0$ if $y(x)=t$, and $l(x, t, y)=1$ otherwise.
-
-**Dataset Loss.** $\mathcal{L}_\mathcal{D}(y) = \frac{1}{N} \sum_{n=1}^N l(x_n, t_n, y)$.
-
-**Generalization Loss.** $\mathcal{L}_p(y) = \mathbb{E}_{p(x,t)}[l(x, t, y)]$.
+- Data:
+    
+    $\mathcal{D} = \{(x_n, t_n)\}_{n=1}^N$ where $(x, t) \sim p(x, t)$
+    
+- Model:
+    
+    $y \in \mathcal{H}$ assuming $\mathcal{H}$ is **finite** with size $M_\mathcal{H}$
+    
+- Loss:
+    
+    $l(x, t, y) = \begin{cases} 0 & \text{if } y(x) = t \\ 1 & \text{if } y(x) \ne t \end{cases}$
+    
+- Dataset Loss:
+    
+    $\mathcal{L}_\mathcal{D}(y) = \frac{1}{N} \sum_{n=1}^N l(x_n, t_n, y)$
+    
+- Generalization Loss:
+    
+    $\mathcal{L}_p(y) = \mathbb{E}_{p(x,t)}[l(x, t, y)]$
     
 
 ### PAC-Bound

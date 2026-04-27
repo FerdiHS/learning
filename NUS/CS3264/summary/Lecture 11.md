@@ -94,7 +94,8 @@ Assuming factorization over datapoints:
 
 $$
 L(\psi, \theta)
-= \sum_{n=1}^N \left(\mathbb{E}_{q_\psi(z_n)}[\log p_\theta(x_n \mid z_n)] - D_{KL}[q_\psi(z_n) \,\|\, p_\theta(z_n)]\right)
+= \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n)}[\log p_\theta(x_n \mid z_n)]
+- \sum_{n=1}^N D_{KL}[q_\psi(z_n) \,\|\, p_\theta(z_n)]
 $$
 
 - First term: **reconstruction**
@@ -119,7 +120,8 @@ So the VAE objective becomes
 
 $$
 L(\psi, \theta)
-= \sum_{n=1}^N \left(\mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)] - D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]\right)
+= \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)]
+- \sum_{n=1}^N D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
 $$
 
 ---
@@ -175,7 +177,11 @@ $$
 
 ## Training Objective
 
-Optimize the negative ELBO with SGD, i.e. minimize $-L(\psi, \theta)$.
+Optimize the negative ELBO with SGD:
+
+$$
+\mathrm{arg\,min}_{\psi, \theta}\, -L(\psi, \theta)
+$$
 
 - Encoder: $q_\psi(z \mid x)$
 - Decoder: $p_\theta(x \mid z)$

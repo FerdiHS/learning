@@ -20,20 +20,20 @@ $w_{k+1} = w_k - \eta (\sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w)$
 Where $\eta$: Learning Rate
 
 <details>
-<summary><strong>Proof</strong></summary>
 
-We know
-$\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$.
+<summary><b>Proof</b>:</summary>
+    
+We know, $\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$
 
 Therefore,
 
 $$
-\begin{aligned}
+\begin{align*}
 \nabla_w \mathcal{L}_{MAP}(w)
-&= \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w) \\
-&= \sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w \\
-&= \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w
-\end{aligned}
+&= \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w)\newline
+\newline
+&= \sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w\newline
+&= \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w\end{align*}
 $$
 
 </details>

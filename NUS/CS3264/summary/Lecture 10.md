@@ -8,7 +8,11 @@
     - Assume $K$ clusters
     - Cluster centers $\{\mu_1, \dots, \mu_K\}$ with $\mu_k \in \mathbb{R}^M$
     - Assignments $\{r_1, \dots, r_N\}$ with $r_n \in \{0, 1\}^K$
-- Objective: minimize $J(\theta)=\sum_{n=1}^N \sum_{k=1}^K r_{nk} \|x_n - \mu_k\|^2$ over $\theta = \{r_n, \mu_k\}$, subject to $\sum_{k=1}^K r_{nk} = 1$.
+- Loss:
+    
+    $$
+    \mathrm{arg\,min}_{\theta = \{r_n, \mu_k\}}\, J(\theta) = \mathrm{arg\,min}_{\theta = \{r_n, \mu_k\}}\, \sum_{n=1}^N \sum_{k=1}^K r_{nk} \|x_n - \mu_k\|^2 \quad \text{s.t. } \sum_{k=1}^K r_{nk} = 1
+    $$
     
 - Algorithm:
     1. **Initialization**
@@ -17,7 +21,7 @@
         
     2. **Assignment**
         
-        Assign each point to its closest cluster: set $r_{nk}=1$ for the closest center to $x_n$, and $r_{nk}=0$ otherwise.
+        Assign each point to its closest cluster $r_{nk} = \begin{cases} 1 & \text{if } k = \mathrm{arg\,min}_k\, \|x_n - \mu_k\|^2 \\ 0 & \text{otherwise} \end{cases}$
         
     3. **Update**
         
@@ -44,12 +48,12 @@
     - $\mathcal{D} = \{x_1, \dots, x_N\}$
 - Model:
     - $p_{\theta}(X, Z) = \prod_{n=1}^N \prod_{k=1}^K \pi_k^{z_{nk}} \mathcal{N}(x_n; \mu_k, \Sigma_k)^{z_{nk}}$
-- Objective:
-    - Maximize $\mathcal{L}(\theta) = \sum_{n=1}^N \log \sum_{k=1}^K \pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)$.
+- Loss:
+    - $\mathrm{arg\,max}_{\theta}\, \mathcal{L}(\theta) = \mathrm{arg\,max}_{\theta}\, \sum_{n=1}^N \log \sum_{k=1}^K \pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)$
 - Assumptions
     - $p(z_n) = \mathrm{Cat}(z_n \mid \pi)$ (Categorical)
     - $p(x_n \mid z_n) = \mathcal{N}(x_n \mid \mu_{z_n}, \Sigma_{z_n})$ (Multivariate Gaussians)
-    - $z_{nk}=1$ if data point $n$ is labeled $k$, and $z_{nk}=0$ otherwise.
+    - $z_{nk} = \begin{cases} 1 & \text{if data point $n$ is labeled $k$} \\ 0 & \text{otherwise} \end{cases}$
 - Responsibility:
     - $\gamma(z_{nk}) = p(z_{nk} = 1 \mid x_n) = \frac{\pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)}{\sum_{j=1}^K \pi_j \mathcal{N}(x_n; \mu_j, \Sigma_j)}$
     - $N_k = \sum_{n=1}^N \gamma(z_{nk})$
@@ -87,12 +91,12 @@ Steps:
     
 2. **Expectation**: Evaluate $p(Z \mid X; \theta_t)$
     
-    Fix $\theta_t$ and choose $q_{t+1}$ to maximize $L(q, \theta_t)$.
+    Fix $\theta_t$, optimize $q_{t+1} = \mathrm{arg\,max}_q\, L(q, \theta_t)$
     
     Set $q(Z) = p(Z \mid X; \theta_t)$ since we want to set $D_{KL}[q(Z) \| p(Z \mid X; \theta_t)]=0$
     
 3. **Maximization**: Compute $\theta_{t+1}$
     
-    Fix $q_{t+1}$ and choose $\theta_{t+1}$ to maximize $L(q_{t+1}, \theta)$.
+    Fix $q_{t+1}$, optimize $\theta_{t+1} = \mathrm{arg\,max}_\theta\, L(q_{t+1}, \theta)$
     
-    Equivalently, $\theta_{t+1}$ maximizes $\mathbb{E}_{Z \sim p(Z \mid X; \theta_t)}[\log p(X, Z; \theta)]$.
+    $\theta_{t+1} = \mathrm{arg\,max}_\theta\, \mathbb{E}_{Z \sim p(Z \mid X; \theta_t)}[\log p(X, Z; \theta)]$
