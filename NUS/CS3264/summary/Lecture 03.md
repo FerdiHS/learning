@@ -34,37 +34,30 @@ $p(\mathbf t\mid \mu)= \mu^{\sum_{n=1}^{N}t_n}(1-\mu)^{N-\sum_{n=1}^{N}t_n}$.
     - **Prior**: $p(w)=\mathcal{N}(w\mid0,\alpha^{-1}I)$
 - **Loss**:
     - **MLE**:
-        $\mathcal{L}_{\text{MLE}}(w) = -\left[\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)\right]$
+        $\mathcal{L}_{\text{MLE}}(w) = -\left(\sum_{n=1}^{N} t_n \log y_n + (1-t_n) \log(1-y_n)\right)$
         
     - **MAP**:
         $\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2$
         
-- <details>
-    <summary><b>Proof</b>:</summary>
-    
-    **MLE**:
-    
-    $\mathrm{arg\,max}_w\, p(\mathbf{t} \mid X, w) = \mathrm{arg\,max}_w\, \prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}$
-    
-    $\mathrm{arg\,max}_w\, \log p(\mathbf{t} \mid X, w) = \mathrm{arg\,max}_w\, \sum_{n=1}^{N} \left[t_n \log y_n + (1 - t_n) \log(1-y_n)\right]$
-    
-    Therefore, $\mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left[t_n \log y_n + (1 - t_n) \log(1-y_n)\right]$
-    
-    **MAP**:
-    
-    $\mathrm{arg\,max}_w\, p(w \mid X, \mathbf{t}) \propto \mathrm{arg\,max}_w\, p(\mathbf{t} \mid X, w) p(w)$
-    
-    $$
-        \begin{align*}
-        \mathrm{arg\,max}_w\, \log p(w \mid X, \mathbf{t})
-        &\propto \mathrm{arg\,max}_w\, \left[- \mathcal{L}_{\text{MLE}}(w) + \log p(w)\right]
-        \newline
-        &=\mathrm{arg\,max}_w\, \left[- \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}\right]
-        \end{align*}
-    $$
-    
-    Therefore, $\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2$
+<details>
+<summary><strong>Proof</strong></summary>
 
-    </details>
+**MLE:** maximizing $p(\mathbf{t} \mid X, w)$ is equivalent to maximizing
+$\prod_{n=1}^{N} y_n^{t_n} (1-y_n)^{1-t_n}$, so
+
+$\log p(\mathbf{t} \mid X, w) = \sum_{n=1}^{N} \left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)$.
+
+Therefore,
+$\mathcal{L}_{\text{MLE}}(w) = - \sum_{n=1}^{N}\left(t_n \log y_n + (1 - t_n) \log(1-y_n)\right)$.
+
+**MAP:** maximizing $p(w \mid X, \mathbf{t})$ is proportional to maximizing
+$p(\mathbf{t} \mid X, w) p(w)$, which gives
+
+$\log p(w \mid X, \mathbf{t}) \propto - \mathcal{L}_{\text{MLE}}(w) - \frac{\alpha}{2}\|w\|_2^2 + \text{const}$.
+
+Therefore,
+$\mathcal{L}_{\text{MAP}}(w) = \mathcal{L}_{\text{MLE}}(w) + \frac{\alpha}{2} \|w\|_2^2$.
+
+</details>
 
 ---

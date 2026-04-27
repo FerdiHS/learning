@@ -20,21 +20,16 @@ $w_{k+1} = w_k - \eta (\sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w)$
 Where $\eta$: Learning Rate
 
 <details>
+<summary><strong>Proof</strong></summary>
 
-<summary><b>Proof</b>:</summary>
-    
-We know, $\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$
+We know
+$\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$.
 
 Therefore,
+$\nabla_w \mathcal{L}_{MAP}(w) = \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w)$.
 
-$$
-\begin{align*}
-\nabla_w \mathcal{L}_{MAP}(w)
-&= \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w)\newline
-\newline
-&= \sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w\newline
-&= \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w\end{align*}
-$$
+This simplifies to
+$\sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w = \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w$.
 
 </details>
 
@@ -50,7 +45,7 @@ $$
     - **Class Prior**: $p(t\mid \theta) = \mathrm{Bern}(t \mid \pi)$
 - **Loss**:
     - **MLE**:
-    $\mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left[t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right]$
+    $\mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left(t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right)$
     - **MAP**:
     $\mathcal{L}_{\text{MAP}}(\pi, \theta) = \mathcal{L}_{\text{NB}}(\pi, \theta) - \log p(\pi) - \sum_{t, m} \log p(\mu_t^m, v_t^m)$
 - **Solution**:

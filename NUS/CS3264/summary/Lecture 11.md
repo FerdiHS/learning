@@ -47,8 +47,7 @@ $$
 where
 
 $$
-p_\theta(x_n) = \int p_\theta(x_n, z_n)\, dz_n
-= \int \mathcal{N}(x_n \mid f_\theta(z_n), \sigma^2 I)\mathcal{N}(z_n; 0, I)\, dz_n
+p_\theta(x_n) = \int p_\theta(x_n, z_n)\, dz_n = \int \mathcal{N}(x_n \mid f_\theta(z_n), \sigma^2 I)\mathcal{N}(z_n; 0, I)\, dz_n
 $$
 
 - This integral is generally hard to compute directly
@@ -67,7 +66,7 @@ $$
 where
 
 $$
-L(\psi, \theta) = \mathbb{E}_{q_\psi(Z)}\left[\log \frac{p_\theta(X, Z)}{q_\psi(Z)}\right]
+L(\psi, \theta) = \mathbb{E}_{q_\psi(Z)}\left(\log \frac{p_\theta(X, Z)}{q_\psi(Z)}\right)
 $$
 
 - Since KL divergence is non-negative, $L(\psi, \theta)$ is a **lower bound**
@@ -86,16 +85,13 @@ $$
 the ELBO becomes
 
 $$
-L(\psi, \theta)
-= \mathbb{E}_{q_\psi(Z)}[\log p_\theta(X \mid Z)] - D_{KL}[q_\psi(Z) \,\|\, p_\theta(Z)]
+L(\psi, \theta) = \mathbb{E}_{q_\psi(Z)}[\log p_\theta(X \mid Z)] - D_{KL}[q_\psi(Z) \,\|\, p_\theta(Z)]
 $$
 
 Assuming factorization over datapoints:
 
 $$
-L(\psi, \theta)
-= \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n)}[\log p_\theta(x_n \mid z_n)]
-- \sum_{n=1}^N D_{KL}[q_\psi(z_n) \,\|\, p_\theta(z_n)]
+L(\psi, \theta) = \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n)}[\log p_\theta(x_n \mid z_n)] - \sum_{n=1}^N D_{KL}[q_\psi(z_n) \,\|\, p_\theta(z_n)]
 $$
 
 - First term: **reconstruction**
@@ -119,9 +115,7 @@ $$
 So the VAE objective becomes
 
 $$
-L(\psi, \theta)
-= \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)]
-- \sum_{n=1}^N D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
+L(\psi, \theta) = \sum_{n=1}^N \mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)] - \sum_{n=1}^N D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
 $$
 
 ---
@@ -131,8 +125,7 @@ $$
 ### Reconstruction Term
 
 $$
-\mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)]
-\approx \frac{1}{M}\sum_{m=1}^M \log \mathcal{N}(x_n \mid f_\theta(z_n^{(m)}), \sigma^2 I)
+\mathbb{E}_{q_\psi(z_n \mid x_n)}[\log p_\theta(x_n \mid z_n)] \approx \frac{1}{M}\sum_{m=1}^M \log \mathcal{N}(x_n \mid f_\theta(z_n^{(m)}), \sigma^2 I)
 $$
 
 where $M$ is the number of Monte Carlo samples and
@@ -144,8 +137,7 @@ $$
 ### KL Term
 
 $$
-D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
-= D_{KL}\left[\mathcal{N}(z_n \mid g^\mu_\psi(x_n), \mathrm{diag}(g^\sigma_\psi(x_n)^2)) \,\|\, \mathcal{N}(z_n \mid 0, I)\right]
+D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)] = D_{KL}\left(\mathcal{N}(z_n \mid g^\mu_\psi(x_n), \mathrm{diag}(g^\sigma_\psi(x_n)^2)) \,\|\, \mathcal{N}(z_n \mid 0, I)\right)
 $$
 
 - For Gaussian distributions, this KL term can often be computed in closed form
@@ -177,11 +169,7 @@ $$
 
 ## Training Objective
 
-Optimize the negative ELBO with SGD:
-
-$$
-\mathrm{arg\,min}_{\psi, \theta}\, -L(\psi, \theta)
-$$
+Optimize the negative ELBO with SGD, i.e. minimize $-L(\psi, \theta)$.
 
 - Encoder: $q_\psi(z \mid x)$
 - Decoder: $p_\theta(x \mid z)$

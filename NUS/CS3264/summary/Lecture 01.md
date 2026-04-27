@@ -31,14 +31,18 @@ $y(x) = w^\top x$
 $\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top x_n - t_n)^2$
 - **Solution** (normal equation):
 $w_{\text{ML}} = (X^\top X)^{-1}X^\top t$
-- <details>
-    <summary>Proof:</summary>
-    
-    $\nabla_w \mathcal{L}(w)=X^\top(Xw - t)$
+<details>
+<summary><strong>Proof</strong></summary>
 
-    At the optimum, set gradient to zero:
-    $X^\top X\,w=X^\top t \quad\Rightarrow\quad w=(X^\top X)^{-1}X^\top t$
-    </details>
+Gradient: $\nabla_w \mathcal{L}(w)=X^\top(Xw - t)$.
+
+At the optimum, set the gradient to zero:
+$X^\top X\,w=X^\top t$.
+
+Therefore:
+$w=(X^\top X)^{-1}X^\top t$.
+
+</details>
 ---
 
 # Nonlinear Regression
@@ -50,17 +54,17 @@ $y(x) = w^\top \phi(x)$
 $\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top \phi(x_n) - t_n)^2$
 - Solution:
 $w_{\text{ML}} = (\Phi^\top \Phi)^{-1}\Phi^\top t$
-- <details>
-    <summary>Proof:</summary>
-    
-    If $\Phi^\top\Phi$ is invertible,
-    $\boxed{\,w_{\text{ML}}=(\Phi^\top\Phi)^{-1}\Phi^\top t\,}$.
-    
-    **If singular**
-    
-    Use the Moore-Penrose pseudoinverse: $\boxed{\,w=\Phi^{+}t\,}$, where $\Phi^+$ is the pseudoinverse of $\Phi$.
+<details>
+<summary><strong>Proof</strong></summary>
 
-    </details>
+If $\Phi^\top\Phi$ is invertible, then
+$w_{\text{ML}}=(\Phi^\top\Phi)^{-1}\Phi^\top t$.
+
+If $\Phi^\top\Phi$ is singular, use the Moore-Penrose pseudoinverse:
+$w=\Phi^{+}t$,
+where $\Phi^+$ is the pseudoinverse of $\Phi$.
+
+</details>
     
 
 ---
@@ -73,26 +77,25 @@ $w_{\text{ML}} = (\Phi^\top \Phi)^{-1}\Phi^\top t$
 $\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top \phi(x_n) - t_n)^2 + \tfrac{\lambda}{2}\|w\|^2$
 - Solution (ridge regression):
 $w_{\text{RR}} = (\Phi^\top \Phi + \lambda I)^{-1}\Phi^\top t$
-- <details>
-    <summary>Proof:</summary>
-    
-    Differentiate:
-    $\nabla_w \mathcal{L}_\lambda(w)=\Phi^\top(\Phi w - t)+\lambda w$
-    
-    Set to zero:
-    $(\Phi^\top\Phi+\lambda I)w=\Phi^\top t$
-    
-    For any $w\neq 0$ and $\lambda>0$,
-    $$
-    w^\top(\Phi^\top\Phi+\lambda I)w
-    = \|\Phi w\|_2^2 + \lambda\|w\|_2^2 \;>\; 0
-    $$
-    
-    so $\Phi^\top\Phi+\lambda I$ is **symmetric positive definite** (SPD) and hence invertible.
-    
-    Therefore, $w=(\Phi^\top\Phi+\lambda I)^{-1}\Phi^\top t$ is the unique minimizer.
+<details>
+<summary><strong>Proof</strong></summary>
 
-    </details>
+Differentiate:
+$\nabla_w \mathcal{L}_\lambda(w)=\Phi^\top(\Phi w - t)+\lambda w$.
+
+Set this to zero:
+$(\Phi^\top\Phi+\lambda I)w=\Phi^\top t$.
+
+For any $w\neq 0$ and $\lambda>0$,
+$w^\top(\Phi^\top\Phi+\lambda I)w = \|\Phi w\|_2^2 + \lambda\|w\|_2^2 > 0$.
+
+So $\Phi^\top\Phi+\lambda I$ is symmetric positive definite and invertible.
+
+Therefore:
+$w=(\Phi^\top\Phi+\lambda I)^{-1}\Phi^\top t$
+is the unique minimizer.
+
+</details>
     
 
 ---
