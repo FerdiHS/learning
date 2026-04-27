@@ -12,7 +12,7 @@
 
 - Dataset:
     
-    $\mathcal{D} = \{t_n\}_{n=1}^N$ where $t \sim \text{Bern}[\mu]$
+    $\mathcal{D} = \{t_n\}_{n=1}^N$ where $t \sim \operatorname{Bern}(\mu)$
     
 - Estimate Sample Average:
     
@@ -29,7 +29,7 @@ Suppose $X_1, X_2, \dots, X_N$ are **independent random variables** such that $a
 Consider $S_n = X_1+X_2+\dots+X_N$. For all $\epsilon > 0$:
 
 $$
-p(|S_N - \mathbb{E}[S_N]|) \le 2 \exp \big(-\frac{2\epsilon^2}{\sum_{n=1}^N(b_n-a_n)^2}\big)
+p(|S_N - \mathbb{E}[S_N]| > \epsilon) \le 2 \exp \big(-\frac{2\epsilon^2}{\sum_{n=1}^N(b_n-a_n)^2}\big)
 $$
 
 ---
@@ -50,11 +50,11 @@ $$
 
 - Data:
     
-    $\mathcal{D} = \set{(s_n, t_n)}_{n=1}^N$ where $(x, t) \sim p(x, t)$
+    $\mathcal{D} = \{(x_n, t_n)\}_{n=1}^N$ where $(x, t) \sim p(x, t)$
     
 - Model:
     
-    $y(x) \in \mathcal{H}$ assuming $\mathcal{H}$ is **finite** with size $\mu_\mathcal{H}$
+    $y(x) \in \mathcal{H}$ assuming $\mathcal{H}$ is **finite** with size $M_\mathcal{H}$
     
 - Loss:
     
@@ -73,7 +73,7 @@ $$
 
 If learning algorithm selects $\hat{y}(x) \in \mathcal{H}$ that minimizes $\mathcal{L}_\mathcal{D}(y)$
 
-and we choose $N \ge \frac{1}{2\epsilon^2} \log \big(\frac{2 \mu_\mathcal{H}}{\delta} \big)$. Then,
+and we choose $N \ge \frac{1}{2\epsilon^2} \log \big(\frac{2 M_\mathcal{H}}{\delta} \big)$. Then,
 
 $$
 p(|\mathcal{L}_\mathcal{D}(\hat{y}) - \mathcal{L}_p(\hat{y})| > \epsilon) \le \delta

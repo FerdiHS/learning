@@ -1,6 +1,6 @@
 # Lecture 08: CNNs and Transformers
 
-## Convolution Neural Networks (CNN)
+## Convolutional Neural Networks (CNN)
 
 ### Properties
 
@@ -20,7 +20,7 @@
 
 ### Stages
 
-1. **Convolutional Stage**: sliding kernel $\times$  local path
+1. **Convolutional Stage**: sliding kernel $\times$ local patch
 2. **Detector Stage**: nonlinearity (usually ReLU)
 3. **Pooling Stage**: often max-pool (stride 2)
 
@@ -85,5 +85,12 @@ $L(x) = f(x) + \lambda g(x)$ where $\lambda \ge 0$ is the Lagrange multiplier.
 ### Karush-Kuhn-Tucker (KKT)
 
 $$
-\max_x\min_{\lambda \ge 0} L(x, \lambda) \\ L(x, \lambda) = f(x) + \lambda g(x) \\ \text{KKT conditions:} \\ \nabla f(x_A) + \lambda \nabla g(x_A) = 0 \\ g(x) \ge 0 \\ \lambda \ge 0 \\ \lambda g(x) = 0
+\begin{aligned}
+\max_x\min_{\lambda \ge 0}\; &L(x, \lambda) \\
+L(x, \lambda) &= f(x) + \lambda g(x) \\
+\nabla f(x_A) + \lambda \nabla g(x_A) &= 0 \\
+g(x) &\ge 0 \\
+\lambda &\ge 0 \\
+\lambda g(x) &= 0
+\end{aligned}
 $$

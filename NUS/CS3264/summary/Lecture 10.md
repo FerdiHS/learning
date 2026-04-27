@@ -7,25 +7,25 @@
 - Model:
     - Assume $K$ clusters
     - Cluster centers $\{\mu_1, \dots, \mu_K\}$ with $\mu_k \in \mathbb{R}^M$
-    - Assignments $\{r_1, \dots, r_n\}$ with $r_n \in \mathbb{R}^M$
+    - Assignments $\{r_1, \dots, r_N\}$ with $r_n \in \{0, 1\}^K$
 - Loss:
     
     $$
-    \argmin_{\theta = \{r_n, \mu_k\}} J(\theta) = \argmin_{\theta = \{r_n, \mu_k\}} \sum_{n=1}^N \sum_{k=1}^K r_{nk} \mid \mid x_n - \mu_k \mid \mid \quad \text{s.t. } \sum_{k=1}^K r_{nk} = 1
+    \operatorname*{arg\,min}_{\theta = \{r_n, \mu_k\}} J(\theta) = \operatorname*{arg\,min}_{\theta = \{r_n, \mu_k\}} \sum_{n=1}^N \sum_{k=1}^K r_{nk} \|x_n - \mu_k\|^2 \quad \text{s.t. } \sum_{k=1}^K r_{nk} = 1
     $$
     
 - Algorithm:
-    1. **Inilization**
+    1. **Initialization**
         
         Randomly pick $\{\mu_1, \dots, \mu_K\}$
         
     2. **Assignment**
         
-        Assign each point to its’ closest cluster $r_{nk} = \begin{cases} 1 & \text{if } k = \argmin_k \mid\mid x_n - \mu_k \mid\mid \\ 0 & \text{otherwise} \end{cases}$
+        Assign each point to its closest cluster $r_{nk} = \begin{cases} 1 & \text{if } k = \operatorname*{arg\,min}_k \|x_n - \mu_k\|^2 \\ 0 & \text{otherwise} \end{cases}$
         
     3. **Update**
         
-        Set each cluster center as the average points in the cluster
+        Set each cluster center as the average of the points in the cluster
         
 - Weakness:
     - Have to choose $K$
@@ -47,15 +47,15 @@
 - Data:
     - $\mathcal{D} = \{x_1, \dots, x_N\}$
 - Model:
-    - $p_{\theta}(X, Z) = \prod_{n=1}^N \prod_{k=1}^K \pi^{z_{nk}} \mathcal{N}(x_n; \mu_k, \Sigma_k)^{z_{nk}}$
+    - $p_{\theta}(X, Z) = \prod_{n=1}^N \prod_{k=1}^K \pi_k^{z_{nk}} \mathcal{N}(x_n; \mu_k, \Sigma_k)^{z_{nk}}$
 - Loss:
-    - $\argmax_{\theta} \mathcal{L}(\theta) = \argmax_{\theta} \sum_{n=1}^N \log \sum_{k=1}^K \pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)$
-- Assumpttions
-    - $p(z_n) = Cat(z_n, \pi)$ (Categorical)
-    - $p(x_n | z_n) = \mathcal{N}(x_n, \mu_{zn}, \sigma_{zn})$ (Multivariate Gaussians)
-    - $z_{nk} = \begin{cases} 1 & \text{if data points $n$ is labeled $k$} \\ 0 & \text{otherwise} \end{cases}$
+    - $\operatorname*{arg\,max}_{\theta} \mathcal{L}(\theta) = \operatorname*{arg\,max}_{\theta} \sum_{n=1}^N \log \sum_{k=1}^K \pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)$
+- Assumptions
+    - $p(z_n) = \operatorname{Cat}(z_n \mid \pi)$ (Categorical)
+    - $p(x_n \mid z_n) = \mathcal{N}(x_n \mid \mu_{z_n}, \Sigma_{z_n})$ (Multivariate Gaussians)
+    - $z_{nk} = \begin{cases} 1 & \text{if data point $n$ is labeled $k$} \\ 0 & \text{otherwise} \end{cases}$
 - Responsibility:
-    - $\gamma(z_k) = p(z_k = 1 \mid x) = \frac{\pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)}{\sum_{j=1}^K \pi_j N(x_n; \mu_j, \Sigma_j)}$
+    - $\gamma(z_{nk}) = p(z_{nk} = 1 \mid x_n) = \frac{\pi_k \mathcal{N}(x_n; \mu_k, \Sigma_k)}{\sum_{j=1}^K \pi_j \mathcal{N}(x_n; \mu_j, \Sigma_j)}$
     - $N_k = \sum_{n=1}^N \gamma(z_{nk})$
     - $\pi_k = \frac{N_k}{N}$
 - Solution:
@@ -85,18 +85,18 @@ Steps:
 
 1. **Initialize**: parameters $\theta_t$
     
-    For distribution $q(z)$, decompose $\log p(X; \theta) = L(q, \theta) + D_{KL}[q][p]$
+    For distribution $q(Z)$, decompose $\log p(X; \theta) = L(q, \theta) + D_{KL}[q(Z) \| p(Z \mid X; \theta)]$
     
-    where $L(q, \theta) = \sum_Z q(Z) \log \frac{p(X, Z; \theta)}{q(Z)}$ is called the lower bound and $D_{KL}[q][p] = \sum_Z q(Z) \log \frac{q(Z)}{p(Z \mid X; \theta)}$ is called the KL divergence
+    where $L(q, \theta) = \sum_Z q(Z) \log \frac{p(X, Z; \theta)}{q(Z)}$ is called the lower bound and $D_{KL}[q(Z) \| p(Z \mid X; \theta)] = \sum_Z q(Z) \log \frac{q(Z)}{p(Z \mid X; \theta)}$ is called the KL divergence
     
 2. **Expectation**: Evaluate $p(Z \mid X; \theta_t)$
     
-    Fix $\theta_t$, optimize $q_{t+1} = \argmax_q L(q, \theta_t)$
+    Fix $\theta_t$, optimize $q_{t+1} = \operatorname*{arg\,max}_q L(q, \theta_t)$
     
-    Set $q(Z) = p(Z \mid X; \theta_t)$ since we want to set $D_{KL}[q][p]=0$
+    Set $q(Z) = p(Z \mid X; \theta_t)$ since we want to set $D_{KL}[q(Z) \| p(Z \mid X; \theta_t)]=0$
     
 3. **Maximization**: Compute $\theta_{t+1}$
     
-    Fix $q_{t+1}$, optimize $\theta_{t+1} = \argmax_\theta L(q_{t+1}, \theta)$
+    Fix $q_{t+1}$, optimize $\theta_{t+1} = \operatorname*{arg\,max}_\theta L(q_{t+1}, \theta)$
     
-    $\theta_{t+1} = \argmax_\theta E_{Z ~ p(Z \mid X; \theta_t)}[\log p(X, Z; \theta)]$
+    $\theta_{t+1} = \operatorname*{arg\,max}_\theta \mathbb{E}_{Z \sim p(Z \mid X; \theta_t)}[\log p(X, Z; \theta)]$

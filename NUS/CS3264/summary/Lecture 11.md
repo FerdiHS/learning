@@ -110,7 +110,7 @@ A fixed Gaussian $q_\psi(z_n) = \mathcal{N}(z_n; \mu, \Sigma)$ is not expressive
 Instead, make the variational distribution depend on the input:
 
 $$
-q_\psi(z_n \mid x_n) = \mathcal{N}(z_n \mid g^\mu_\psi(x_n), g^\Sigma_\psi(x_n))
+q_\psi(z_n \mid x_n) = \mathcal{N}(z_n \mid g^\mu_\psi(x_n), \operatorname{diag}(g^\sigma_\psi(x_n)^2))
 $$
 
 - $g_\psi(\cdot)$ is the **encoder** network
@@ -135,7 +135,7 @@ $$
 \approx \frac{1}{M}\sum_{m=1}^M \log \mathcal{N}(x_n \mid f_\theta(z_n^{(m)}), \sigma^2 I)
 $$
 
-where
+where $M$ is the number of Monte Carlo samples and
 
 $$
 z_n^{(m)} \sim q_\psi(z_n \mid x_n)
@@ -145,7 +145,7 @@ $$
 
 $$
 D_{KL}[q_\psi(z_n \mid x_n) \,\|\, p_\theta(z_n)]
-= D_{KL}\left[\mathcal{N}(z_n \mid g^\mu_\psi(x_n), g^\Sigma_\psi(x_n)) \,\|\, \mathcal{N}(0, I)\right]
+= D_{KL}\left[\mathcal{N}(z_n \mid g^\mu_\psi(x_n), \operatorname{diag}(g^\sigma_\psi(x_n)^2)) \,\|\, \mathcal{N}(z_n \mid 0, I)\right]
 $$
 
 - For Gaussian distributions, this KL term can often be computed in closed form
@@ -162,11 +162,11 @@ Problem:
 Key idea:
 
 $$
-\epsilon^{(m)} \sim \mathcal{N}(0, I)
+\epsilon_n^{(m)} \sim \mathcal{N}(0, I)
 $$
 
 $$
-z_n^{(m)} = g^\mu_\psi(x_n) + g^\Sigma_\psi(x_n) \odot \epsilon_n^{(m)}
+z_n^{(m)} = g^\mu_\psi(x_n) + g^\sigma_\psi(x_n) \odot \epsilon_n^{(m)}
 $$
 
 - Randomness is moved into $\epsilon$
@@ -180,7 +180,7 @@ $$
 Optimize the negative ELBO with SGD:
 
 $$
-\arg\min_{\psi, \theta} -L(\psi, \theta)
+\operatorname*{arg\,min}_{\psi, \theta} -L(\psi, \theta)
 $$
 
 - Encoder: $q_\psi(z \mid x)$

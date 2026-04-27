@@ -20,14 +20,14 @@
 **Generalization Error = Bias + Variance + Noise**
 
 $$
-\mathbb{E}_{p(x, t)p(D)}\left[(y(x) - t)^2\right] = \mathbb{E}_{p(x)}\left[\bar{y}(x)-\bar{t}(x)\right] + \mathbb{E}_{p(x)p(D)}\left[(y(x; D)) - \bar{y}(x))^2\right] + \mathbb{E}_{p(x, t)}\left[(\bar{t}(x) - t)^2\right]
+\mathbb{E}_{p(x, t)p(D)}\left[(y(x; D) - t)^2\right] = \mathbb{E}_{p(x)}\left[(\bar{y}(x)-\bar{t}(x))^2\right] + \mathbb{E}_{p(x)p(D)}\left[(y(x; D) - \bar{y}(x))^2\right] + \mathbb{E}_{p(x, t)}\left[(\bar{t}(x) - t)^2\right]
 $$
 
 where,
 
-- **Generalization Error**: $\mathbb{E}_{p(x, t)p(D)}\left[(y(x) - t)^2\right]$
-- **Bias**: $\mathbb{E}_{p(x)}\left[\bar{y}(x)-\bar{t}(x)\right]$
-- **Variance**: $\mathbb{E}_{p(x)p(D)}\left[(y(x; D)) - \bar{y}(x))^2\right]$
+- **Generalization Error**: $\mathbb{E}_{p(x, t)p(D)}\left[(y(x; D) - t)^2\right]$
+- **Bias**: $\mathbb{E}_{p(x)}\left[(\bar{y}(x)-\bar{t}(x))^2\right]$
+- **Variance**: $\mathbb{E}_{p(x)p(D)}\left[(y(x; D) - \bar{y}(x))^2\right]$
 - **Noise**: $\mathbb{E}_{p(x, t)}\left[(\bar{t}(x) - t)^2\right]$
 
 **Intuition**

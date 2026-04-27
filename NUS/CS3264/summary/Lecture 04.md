@@ -1,4 +1,4 @@
-# Lecture 04: Naive Bayes
+# Lecture 04: Naïve Bayes
 
 ---
 
@@ -15,7 +15,7 @@
 
 # Gradient Descent
 
-$w_{k+1} = w_k - \eta (\sum_{n=1}^{n} (y_n - t_n) \Phi_n + \alpha w)$
+$w_{k+1} = w_k - \eta (\sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w)$
 
 Where $\eta$: Learning Rate
 
@@ -23,14 +23,14 @@ Where $\eta$: Learning Rate
 
 <summary><b>Proof</b>:</summary>
     
-We know, $\mathcal{L}_{MAP}(w) = \big(\sigma_{n=1}^{N} -t_n \log y_n - (t_n - y_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$
+We know, $\mathcal{L}_{MAP}(w) = \sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big) + \frac{\alpha}{2}w^\top w$
 
 Therefore,
 
 $$
 \begin{align*}
-\triangledown_w \mathcal{L}_{MAP}(w)
-&= \triangledown_w \big(\sigma_{n=1}^{N} -t_n \log y_n - (t_n - y_n) \log(1-y_n) \big) + \triangledown_w (\frac{\alpha}{2} w^\top w)\newline 
+\nabla_w \mathcal{L}_{MAP}(w)
+&= \nabla_w \left(\sum_{n=1}^{N}\big( -t_n \log y_n - (1 - t_n) \log(1-y_n) \big)\right) + \nabla_w (\frac{\alpha}{2} w^\top w)\newline
 \newline
 &= \sum_{n=1}^{N} \big( -t_n(1 - y_n) \Phi_n + (1 - t_n) y_n \Phi_n \big) + \alpha w\newline
 &= \sum_{n=1}^{N} (y_n - t_n) \Phi_n + \alpha w\end{align*}
@@ -43,11 +43,11 @@ $$
 
 # Naïve Bayes
 
-- **Data**: $\mathcal D=\{(x_n,t_n)\}_{n=1}^N$*, with $t_n\in\{0,1\}$, $x_n=(x_{n}^{1},\dots,x_{n}^{M})$*.
+- **Data**: $\mathcal D=\{(x_n,t_n)\}_{n=1}^N$, with $t_n\in\{0,1\}$, $x_n=(x_{n}^{1},\dots,x_{n}^{M})$.
 - **Model**:
     - **Likelihood**: $p(t, X \mid \theta) = p(X \mid t, \theta) p(t \mid \theta)$
-    - **Class Conditional Distribution**: $p(x \mid t, \theta) = \prod_{m=1}^{M} N(x^m \mid \mu_t^m, v_t^m)$
-    - **Class Prior**: $p(t\mid \theta) = Bern(\pi)$
+    - **Class Conditional Distribution**: $p(x \mid t, \theta) = \prod_{m=1}^{M} \mathcal{N}(x^m \mid \mu_t^m, v_t^m)$
+    - **Class Prior**: $p(t\mid \theta) = \operatorname{Bern}(t \mid \pi)$
 - **Loss**:
     - **MLE**:
     $\mathcal{L}_{\text{NB}}(\pi, \theta) = - \sum_{n=1}^{N} \left[t_n \log \pi + (1 - t_n) \log (1 - \pi) + \sum_{m=1}^{M} \log p(x_n^m \mid t_n, \theta)\right]$
@@ -60,7 +60,7 @@ $$
         
         $\mu_{t, \text{MLE}}^m = \bar{x}_t^m$
         
-        $v_{t, \text{MLE}}^m = \frac{1}{N_t}\sum_{n\in I_t}\big(x_n^m - \bar{x}_t^m\big)$
+        $v_{t, \text{MLE}}^m = \frac{1}{N_t}\sum_{n\in I_t}\big(x_n^m - \bar{x}_t^m\big)^2$
         
     - **MAP**:
         

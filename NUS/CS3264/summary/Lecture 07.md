@@ -64,10 +64,10 @@ Used to remove linearity in Neural Networks
 
 For *any* continuous function $f: [0, 1] \rightarrow \mathbb{R}$ and *any* $\epsilon > 0$,
 
-there exists a width $m$ and real numbers $c_1, \set{\Delta_i, w_i, b_i}_{i=1}^m$ such that the single-hidden-layer network with sigmoid activation $\sigma$
+there exists a width $m$ and real numbers $c_1, \{\Delta_i, w_i, b_i\}_{i=1}^m$ such that the single-hidden-layer network with sigmoid activation $\sigma$
 
 $$
-\hat{f}(x) = c_1 + \sum_{i=1}^m \Delta_i \sigma(w_ix + b_i)
+\hat{f}(x) = c_1 + \sum_{i=1}^m \Delta_i \sigma(w_i x + b_i)
 $$
 
 satisfies $\max_{x \in [0, 1]} |f(x) - \hat{f}(x)| < \epsilon$
@@ -79,14 +79,14 @@ satisfies $\max_{x \in [0, 1]} |f(x) - \hat{f}(x)| < \epsilon$
 Assuming the loss function $\mathcal{L}$ is twice-continuously differentiable and L-smooth. We choose $\alpha \le \frac{1}{L}$ then, 
 
 $$
-\mathcal{L}(w_t) - \mathcal{L}(w_{t+1}) \ge \frac{\alpha || \nabla \mathcal{L}(w_t)||^2}{2}
+\mathcal{L}(w_t) - \mathcal{L}(w_{t+1}) \ge \frac{\alpha \| \nabla \mathcal{L}(w_t)\|^2}{2}
 $$
 
 ### Assumptions
 
 - **Constant** learning rate $\alpha$
 - $\mathcal{L}(w)$ is **twice continuously differentiable**
-    - Taylors Theorem: there exists some $\xi \in \mathbb{R}^d$ such that
+    - Taylor's Theorem: there exists some $\xi \in \mathbb{R}^d$ such that
         
         $$
         \mathcal{L}(v) = \mathcal{L}(w) + \nabla \mathcal{L}(w)^\top(v-w) + \frac{1}{2}(v-w)^\top \nabla^2 \mathcal{L}(\xi)(v-w)
@@ -95,11 +95,11 @@ $$
 - $\mathcal{L}(w)$ is ***L*-smooth**
     
     $$
-    || \nabla_w \mathcal{L}(w) - \nabla_v \mathcal{L}(v)|| \le L ||w - v||
+    \| \nabla_w \mathcal{L}(w) - \nabla_v \mathcal{L}(v)\| \le L \|w - v\|
     $$
     
     $$
-    |u^\top \nabla^2\mathcal{L}(w)u| \le L||u||^2
+    |u^\top \nabla^2\mathcal{L}(w)u| \le L\|u\|^2
     $$
     
 
@@ -114,6 +114,8 @@ $$
         $w_{t+1} = w_t - \alpha \nabla_w \mathcal{L}_{n_t}(w_t)$
         
 
+Assume stochastic gradients have bounded variance $\sigma^2$:
+
 $$
-\min_{t \in \set{0, \dots, T-1}} \mathbb{E}[|| \nabla \mathcal{L}(w_t)||^2] \le \frac{\mathcal{L}(w_0) - \mathcal{L}(w_*)}{\alpha T} + \frac{\alpha \sigma^2 L}{2}
+\min_{t \in \{0, \dots, T-1\}} \mathbb{E}[\| \nabla \mathcal{L}(w_t)\|^2] \le \frac{\mathcal{L}(w_0) - \mathcal{L}(w_*)}{\alpha T} + \frac{\alpha \sigma^2 L}{2}
 $$

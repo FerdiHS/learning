@@ -17,7 +17,7 @@ Every ML model involves three components:
 
 1. **Data**
 2. **Model**
-3. **Loss function (ℒ)**
+3. **Loss function ($\mathcal{L}$)**
 
 ---
 
@@ -43,11 +43,11 @@ $w_{\text{ML}} = (X^\top X)^{-1}X^\top t$
 
 # Nonlinear Regression
 
-- Extend regression with **basis functions** $ϕ(x)$:
+- Extend regression with **basis functions** $\phi(x)$:
 $y(x) = w^\top \phi(x)$
 - Example: polynomial basis $\phi(x) = (1, x, x^2, \ldots, x^p)^\top$.
 - **Loss** (squared error):
-$\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top x_n - t_n)^2$
+$\mathcal{L}(w) = \tfrac{1}{2}\sum_n (w^\top \phi(x_n) - t_n)^2$
 - Solution:
 $w_{\text{ML}} = (\Phi^\top \Phi)^{-1}\Phi^\top t$
 - <details>
@@ -58,7 +58,7 @@ $w_{\text{ML}} = (\Phi^\top \Phi)^{-1}\Phi^\top t$
     
     **If singular**
     
-    Use the pseudoinverse: $\boxed{\,w=\Phi^{+}t\,}$ where $\Phi^+ = \left( \Phi^\top \Phi \right)^{-1} \Phi^\top$.
+    Use the Moore-Penrose pseudoinverse: $\boxed{\,w=\Phi^{+}t\,}$, where $\Phi^+$ is the pseudoinverse of $\Phi$.
 
     </details>
     
@@ -82,11 +82,13 @@ $w_{\text{RR}} = (\Phi^\top \Phi + \lambda I)^{-1}\Phi^\top t$
     Set to zero:
     $(\Phi^\top\Phi+\lambda I)w=\Phi^\top t$
     
-    For any $w\neq 0$,
-    $w^\top(\Phi^\top\Phi+\lambda I)w
-    = \|\Phi w\|_2^2 + \lambda\|w\|_2^2 \;>\; 0$
+    For any $w\neq 0$ and $\lambda>0$,
+    $$
+    w^\top(\Phi^\top\Phi+\lambda I)w
+    = \|\Phi w\|_2^2 + \lambda\|w\|_2^2 \;>\; 0
+    $$
     
-    so $\Phi^\top\Phi+\lambda I$ is **symmetric positive definite** (SPD) and hence invertible. 
+    so $\Phi^\top\Phi+\lambda I$ is **symmetric positive definite** (SPD) and hence invertible.
     
     Therefore, $w=(\Phi^\top\Phi+\lambda I)^{-1}\Phi^\top t$ is the unique minimizer.
 
